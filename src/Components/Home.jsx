@@ -45,7 +45,7 @@ function Home() {
           <div className="div">
             <h1>Featured Recipe</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
+              aaaLorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
               architecto, vero dicta corporis est reprehenderit asperiores quas
               aliquam illum reiciendis exercitationem error voluptatem facere
               at! Aut quos adipisci minus facilis?
