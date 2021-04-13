@@ -9,6 +9,9 @@ function LatestRecipes() {
       RCPname: "",
       RCPimg: "",
       RCPtype: "",
+      RCPreadyIn: "",
+      RCPservings: "",
+      RCP_ID: "",
     },
   ]);
   const [dailyHighlights, setDailyHighlights] = useState();
@@ -24,6 +27,9 @@ function LatestRecipes() {
             RCPname: val.title,
             RCPimg: val.image,
             RCPtype: val.vegan,
+            RCPreadyIn: val.readyInMinutes,
+            RCPservings: val.servings,
+            RCP_ID: val.id,
           };
         })
       );
@@ -34,13 +40,15 @@ function LatestRecipes() {
     <div className="recipeMainDiv">
       <h1>Latest Recipes</h1>
       <div className="recipeContainer">
-        {randomRecipeData.map((val, index) => {
+        {randomRecipeData.map((val) => {
           return (
             <RecipeCard
-              key={index}
+              key={val.RCP_ID}
               name={`${val.RCPname}`}
               img={val.RCPimg}
               type={val.RCPtype}
+              readyIn={val.RCPreadyIn}
+              servings={val.RCPservings}
             />
           );
         })}

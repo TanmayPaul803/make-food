@@ -1,8 +1,11 @@
 import { React, useState } from "react";
+
 import "../App.css";
 import "../ComponentCSS/Catagories.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
+
 function MiddleNav() {
+  const history = useHistory();
   const [input, setInput] = useState();
   const [search, setSearch] = useState();
   console.log(search);
@@ -29,6 +32,7 @@ function MiddleNav() {
             onKeyPress={(e) => {
               if (e.key === "Enter") {
                 setSearch(input);
+                history.push({ pathname: "/searched", state: search });
               }
             }}
             value={input}

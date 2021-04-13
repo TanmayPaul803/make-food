@@ -28,7 +28,7 @@ const CatagoryData = [
   {
     img:
       "https://images.unsplash.com/photo-1611526741060-64b55f75d5ab?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDR8fGNvY2t0YWlsc3xlbnwwfDB8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    name: "Cocktails",
+    name: "Cocktail",
   },
   {
     img:

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Economica&display=swap");
 .recipeMainDiv {
   width: 100%;
   display: flex;
@@ -21,7 +22,7 @@
   flex-wrap: wrap;
   padding-top: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .recipeCard {
   margin: 0;
@@ -33,34 +34,50 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.card {
-  width: 300px;
-  height: 350px;
-  background-color: rgb(226, 226, 226);
-  margin: 20px;
-  border-radius: 3px;
-}
+.recipeCard .card {
+  width: 280px;
+  height: fit-content;
 
-.top {
+  background-color: rgb(33, 37, 37);
+}
+.recipeCard .card .top {
   width: 100%;
   height: 60%;
-}
 
-.top img {
+  object-fit: cover;
+}
+.recipeCard .card .top p {
+}
+.recipeCard .card .top img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
-
-/* .top p {
-  font-size: 1.2rem;
-  padding-left: 20px;
-  transform: translate(0px, -30px);
-} */
-
-.info {
-  width: 100%;
+.recipeCard .card .info {
   height: 40%;
+  display: flex;
+  flex-direction: column;
 }
-.info h2 {
-  padding: 30px 10px;
+.recipeCard .card .info .name {
+  background-color: rgb(76, 88, 78);
+  padding: 10px 0px;
+  color: rgb(214, 214, 214);
+  font-family: "Economica", sans-serif;
+}
+.recipeCard .card .info .name p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.recipeCard .card .info .about {
+  padding: 15px;
+}
+.recipeCard .card .info .about span {
+  color: rgb(241, 192, 127);
+}
+.recipeCard .card .info .about p {
+  border-bottom: 1px dotted grey;
+  color: beige;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
