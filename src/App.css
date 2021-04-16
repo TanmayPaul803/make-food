@@ -523,11 +523,68 @@
   left: 50%;
   transform: translate(-50%, 0%);
 }
-.SearchedComponent{
-  width:100%;
-  height:100vh;
-  background-color:blue;
-  }
+.SearchedComponent {
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
+}
 
-@media screen and (max-width: 480px) {
+/* ///////////////////--Recipes Component--/////////////////// */
+.recipes {
+  width: 100%;
+}
+.recipes .hero {
+  width: 100%;
+  height: 60vh;
+}
+.recipes .hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recipes .hero h1 {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+}
+.Rcp_content {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 0px;
+}
+form {
+  display: flex;
+}
+.Rcp_content div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+.Rcp_content div p {
+  margin-bottom: 10px;
+}
+
+.filled-basic {
+  color: white;
+}
+.MuiSelect-select.MuiSelect-select {
+  padding-right: 0px !important;
+  width: 100px !important;
+}
+body {
+  padding-right: 0px !important;
+}
+.Rcp-Card-cont {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

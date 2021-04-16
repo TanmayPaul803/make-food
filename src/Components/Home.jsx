@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import Splide_Div from "./Splide_Div";
+import SearchedComponent from "./SearchedComponent";
 
 /// icons///
 import RecipeBook from "../Assets/4329557-cooking/svg/016-recipe book.svg";
@@ -30,8 +31,9 @@ function Home() {
       <HeroImg />
       <MiddleNav />
       <Switch>
-        <Route path="/catagories" component={Catagories} />
-        <Route path="/keywords" component={KeywordComponent} />
+        <Route path="/foodWebsite/catagories" component={Catagories} />
+        <Route path="/foodWebsite/keywords" component={KeywordComponent} />
+        <Route path="/foodWebsite/searched" component={SearchedComponent} />
         <Catagories />
         <KeywordComponent />
       </Switch>
@@ -45,10 +47,10 @@ function Home() {
           <div className="div">
             <h1>Featured Recipe</h1>
             <p>
-              aaaLorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-              architecto, vero dicta corporis est reprehenderit asperiores quas
-              aliquam illum reiciendis exercitationem error voluptatem facere
-              at! Aut quos adipisci minus facilis?
+              aaaLorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Aperiam architecto, vero dicta corporis est reprehenderit
+              asperiores quas aliquam illum reiciendis exercitationem error
+              voluptatem facere at! Aut quos adipisci minus facilis?
             </p>
             <Button variant="contained" color="primary">
               View More

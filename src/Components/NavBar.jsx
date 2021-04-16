@@ -15,9 +15,12 @@ const NavBar = () => {
                 <a href="#">Home</a>
               </li>
             </NavLink>
-            <li>
-              <a href="#">Recipes</a>
-            </li>
+            <NavLink to="/Recipes">
+              <li>
+                <a href="#">Recipes</a>
+              </li>
+            </NavLink>
+
             <li>
               <a href="#">About Me</a>
             </li>

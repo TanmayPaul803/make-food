@@ -6,17 +6,17 @@ import { Link, NavLink, useHistory } from "react-router-dom";
 
 function MiddleNav() {
   const history = useHistory();
-  const [input, setInput] = useState();
-  const [search, setSearch] = useState();
+  const [input, setInput] = useState("");
+  const [search, setSearch] = useState("");
   console.log(search);
   return (
     <div>
       <div className="catagoriesBar">
         <div className="contItem">
-          <Link to="/keywords">Keywords</Link>
+          <Link to="/foodWebsite/keywords">Keywords</Link>
         </div>
         <div className="contItem">
-          <Link to="/catagory">Populer catagories</Link>
+          <Link to="/foodWebsite/catagories">Populer catagories</Link>
         </div>
         {/* <div className="contItem">
           <Link to="/catagory">catagory</Link>
@@ -29,14 +29,19 @@ function MiddleNav() {
             onChange={(e) => {
               setInput(e.target.value);
             }}
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                setSearch(input);
-                history.push({ pathname: "/searched", state: search });
-              }
-            }}
             value={input}
           />
+          <button
+            onClick={() => {
+              setSearch(input);
+              history.push({
+                pathname: "/foodWebsite/searched",
+                state: search,
+              });
+            }}
+          >
+            Search
+          </button>
         </div>
       </div>
     </div>

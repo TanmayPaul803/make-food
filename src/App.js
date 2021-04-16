@@ -4,17 +4,17 @@ import NavBar from "./Components/NavBar";
 import { Route, Switch, useLocation } from "react-router-dom";
 import AboutCatagory from "./Components/AboutCatagory";
 import AboutRecipe from "./Components/AboutRecipe";
-import SearchedComponent from "./Components/SearchedComponent"
+import Recipes from "./Components/Recipes";
 
 const App = () => {
   return (
     <>
       <NavBar></NavBar>
       <Switch>
-        <Route exact path="/foodWebsite" component={Home} />
+        <Route path="/foodWebsite" component={Home} />
         <Route path="/name" component={AboutCatagory} />
         <Route path="/aboutRecipe" component={AboutRecipe} />
-        <Route path="/searched" component={SearchedComponent} />
+        <Route path="/Recipes" component={Recipes} />
       </Switch>
     </>
   );
