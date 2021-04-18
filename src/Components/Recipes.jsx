@@ -5,16 +5,19 @@ import TextField from "@material-ui/core/TextField";
 
 import RecipeCard from "./RecipeCard";
 import axios from "axios";
+import SearchCard from "./SearchCard";
 const Recipes = () => {
-  const [cuisine, setCuisine] = useState();
-  const [diet, setDiet] = useState();
-  const [type, setType] = useState();
-  const [intolerance, setIntolerance] = useState();
+  const [cuisine, setCuisine] = useState("");
+  const [diet, setDiet] = useState("");
+  const [type, setType] = useState("");
+  const [intolerance, setIntolerance] = useState("");
   const [nameInput, setNameInput] = useState("");
   const [includeIngdredient, setIncludeIngdredient] = useState("");
 
-  const [recipeData, setRecipeData] = useState();
+  const [recipeData, setRecipeData] = useState([]);
+  const [formSubmitTriggred, setFormSubmitTriggred] = useState(false);
   console.log(recipeData);
+
   // useEffect(() => {
   //   const getData = async () => {
   //     const response = await axios.get(
@@ -30,7 +33,6 @@ const Recipes = () => {
         <img src={backImg} alt="" />
         <h1>Welcome to Recipes</h1>
       </div>
-
       {/* ///////         User Selection          ////////// */}
       <div className="Rcp_content">
         {/* ------------Name Input--------------  */}
@@ -40,9 +42,9 @@ const Recipes = () => {
             e.preventDefault();
             const getdata = async () => {
               const response = await axios.get(
-                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&number=2&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}`
+                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}`
               );
-              setRecipeData(response.data);
+              setRecipeData(response.data.results);
             };
             getdata();
           }}
@@ -77,9 +79,6 @@ const Recipes = () => {
               variant="filled"
               displayEmpty
             >
-              <MenuItem value="" disabled>
-                Choose your option
-              </MenuItem>
               <MenuItem value="Indian">Indian</MenuItem>
               <MenuItem value="American">American</MenuItem>
               <MenuItem value="Chinese">Chinese</MenuItem>
@@ -157,17 +156,36 @@ const Recipes = () => {
               <MenuItem value="Wheat">Wheat</MenuItem>
             </Select>
           </div>
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            value="Submit"
+            onClick={() => {
+              setFormSubmitTriggred(true);
+            }}
+          />
         </form>
       </div>
-
       {/* /////////////////////////////////////////////////// */}
-      <h1>
-        this is {cuisine} food Diet:{diet} Type:{type} intolerance:{intolerance}{" "}
-      </h1>
-      <div className="Rcp-Card-cont">
-        <RecipeCard />
-      </div>
+
+      {formSubmitTriggred === false || recipeData.length === 0 ? (
+        <h1>"Sorry, Nothing found!"</h1>
+      ) : (
+        <>
+          <h1>Your Search Results: </h1>
+          <div className="Rcp-Card-cont">
+            {recipeData.map((val, index) => {
+              return (
+                <SearchCard
+                  name={val.title}
+                  img={val.image}
+                  state={val}
+                  key={val.id}
+                />
+              );
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 };

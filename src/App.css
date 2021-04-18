@@ -405,6 +405,9 @@
   font-weight: 900;
   font-family: "Saira Condensed", sans-serif;
 }
+.simmiler-cat {
+  min-width: 90%;
+}
 .similler-cat-title-container {
   width: 100%;
   height: 100px;
@@ -414,12 +417,17 @@
 }
 .similler-cat-title-container .div {
   width: 32%;
+
   height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.div h1 {
+.divTitle-SRcp {
+  margin: 0px 10px;
+}
+
+.divTitle-SRcp h1 {
   font-size: 4rem;
   font-family: "Great Vibes", cursive;
 }
@@ -556,10 +564,14 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: rgb(255, 255, 255);
-  padding: 20px 0px;
+  padding: 50px 0px;
+  /* border-bottom: 2px solid rgb(150, 143, 143); */
+  margin-bottom: 50px;
+  box-shadow: 5px 5px 20px grey;
 }
 form {
   display: flex;
+  align-items: center;
 }
 .Rcp_content div {
   display: flex;
@@ -583,8 +595,99 @@ body {
 }
 .Rcp-Card-cont {
   width: 100%;
-  height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+input[type="submit"] {
+  padding: 5px 15px;
+  background: #ccc;
+  border: none;
+  transform: translate(0%, 15%);
+  transition: 0.5s;
+  border-radius: 2px;
+}
+input[type="submit"]:hover {
+  background-color: rgb(255, 171, 103);
+  transition: 0.5s;
+  cursor: pointer;
+  color: #3b0808;
+}
+/* ////////////////--SearchCard--////////////////////////// */
+.searchCard-Container {
+  width: 15%;
+  background-color: #ececec;
+
+  border-radius: 3px;
+  margin: 10px;
+  transition: 1.2s;
+}
+.searchCard-Container:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  background-color: #eaeee2;
+}
+.searchCard-Container .top {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px 10px 20px 20px;
+  color: #000000;
+  font-size: 1.2rem;
+}
+.searchCard-Container .top:hover {
+  overflow: visible;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  z-index: 90;
+}
+.searchCard-Container .top p {
+  margin: 20px 0px;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+  width: 100%;
+}
+.searchCard-Container .mid {
+  width: 100%;
+  height: 200px;
+}
+.searchCard-Container .mid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.searchCard-Container .bottom {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  padding: 30px 0px 20px 10px;
+}
+.searchCard-Container .bottom div {
+  margin-right: px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  color: #6d6d6dab;
+  transition: 0.5s;
+}
+.searchCard-Container .bottom div:hover {
+  background-color: #00000013;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.searchCard-Container .bottom Button {
+  position: absolute;
+  right: 1em;
+  bottom: 22px;
+  color: #181614;
+  border: 1px solid rgb(0, 0, 0);
 }

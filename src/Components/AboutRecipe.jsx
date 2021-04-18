@@ -30,7 +30,7 @@ function AboutRecipe(props) {
       );
       //setApiData(response.data[0].steps);
       const simmilerRecipeResponse = await axios.get(
-        `https://api.spoonacular.com/recipes/${foodID}/similar?apiKey=49510ae643c54e1dbe96171df5c05662&number=10`
+        `https://api.spoonacular.com/recipes/${foodID}/similar?apiKey=49510ae643c54e1dbe96171df5c05662&number=4`
       );
       setFoodInfo({
         name: RecipeInfoAPI.data.title,
@@ -44,8 +44,8 @@ function AboutRecipe(props) {
         recipeSteps: RecipeInfoAPI.data.analyzedInstructions[0].steps,
         simmilerRecipe: simmilerRecipeResponse.data,
       });
-      setSimmilerRecipe(simmilerRecipeResponse);
-      console.log(RecipeInfoAPI.data);
+      setSimmilerRecipe(simmilerRecipeResponse.data);
+      console.log(simmilerRecipe);
     };
     getData();
   }, [foodID]);
@@ -140,7 +140,7 @@ function AboutRecipe(props) {
             <div className="div">
               <hr />
             </div>
-            <div className="div">
+            <div className="divTitle-SRcp">
               <h1>Simmler Recipe</h1>
             </div>
             <div className="div">
@@ -148,10 +148,26 @@ function AboutRecipe(props) {
             </div>
           </div>
           <div className="similer-recipe-container">
+            {simmilerRecipe.map((val, index) => {
+              return (
+                <>
+                  <NavLink to={{ pathname: "/aboutRecipe", state: val }}>
+                    <RecipeCard
+                      name={val.title}
+                      id={val.id}
+                      readyIn={val.readyInMinutes}
+                      servings={val.servings}
+                      key={val.id}
+                    />
+                  </NavLink>
+                </>
+              );
+            })}
+
+            {/* <RecipeCard />
             <RecipeCard />
             <RecipeCard />
-            <RecipeCard />
-            <RecipeCard />
+            <RecipeCard /> */}
           </div>
         </div>
         {/* // {//////////////////////////////////////////////////////} */}

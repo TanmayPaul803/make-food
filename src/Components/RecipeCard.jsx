@@ -5,7 +5,12 @@ function RecipeCard(props) {
     <div className="recipeCard">
       <div className="card">
         <div className="top">
-          <img src={props.img} alt=" Recipe Img" />
+          <img
+            src={` https://spoonacular.com/recipeImages/${props.id}-556x370.jpg
+
+`}
+            alt=" Recipe Img"
+          />
           <p></p>
         </div>
         <div className="info">
