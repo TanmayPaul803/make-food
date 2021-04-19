@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import backImg from "../rcpBackImg.png";
 import { Select, MenuItem } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 import axios from "axios";
 import SearchCard from "./SearchCard";
-import { VideoCall } from "@material-ui/icons";
+
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
   const [diet, setDiet] = useState("");
