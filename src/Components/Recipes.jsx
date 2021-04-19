@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import backImg from "../rcpBackImg.png";
 import { Select, MenuItem } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import RecipeCard from "./RecipeCard";
 import axios from "axios";
 import SearchCard from "./SearchCard";
+import { VideoCall } from "@material-ui/icons";
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
   const [diet, setDiet] = useState("");
@@ -16,17 +18,41 @@ const Recipes = () => {
 
   const [recipeData, setRecipeData] = useState([]);
   const [formSubmitTriggred, setFormSubmitTriggred] = useState(false);
-  console.log(recipeData);
+  const [desserts, setDesserts] = useState([]);
+  const [snack, setsnack] = useState([]);
+  const [breakfast, setBreakfast] = useState([]);
+  const [mainCourse, setMainCourse] = useState([]);
+  const [drinks, setDrinks] = useState([]);
+  console.log(desserts);
+  const clicked = (e) => {};
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const response = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&number=2&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}&diet=${diet}&includeIngredients={includeIngdredient}&type={type}&intolerances={intolerance}`
-  //     );
-  //     setRecipeData(response.data);
-  //   };
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    const getData = async () => {
+      const dessertsRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=dessert`
+      );
+      setDesserts(dessertsRes.data.results);
+      const snackRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=snack`
+      );
+      setsnack(snackRes.data.results);
+
+      const breakfastRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=breakfast`
+      );
+      setBreakfast(breakfastRes.data.results);
+      const mainCourseRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=main course`
+      );
+      setMainCourse(mainCourseRes.data.results);
+      const drinksRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=drink`
+      );
+      setDrinks(drinksRes.data.results);
+    };
+
+    getData();
+  }, []);
   return (
     <div className="recipes">
       <div className="hero">
@@ -42,7 +68,7 @@ const Recipes = () => {
             e.preventDefault();
             const getdata = async () => {
               const response = await axios.get(
-                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}`
+                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}&number=12`
               );
               setRecipeData(response.data.results);
             };
@@ -167,8 +193,12 @@ const Recipes = () => {
       </div>
       {/* /////////////////////////////////////////////////// */}
 
-      {formSubmitTriggred === false || recipeData.length === 0 ? (
-        <h1>"Sorry, Nothing found!"</h1>
+      {recipeData.length === 0 ? (
+        <h1>
+          {formSubmitTriggred === true && recipeData.length === 0
+            ? " Nothing Found"
+            : ""}
+        </h1>
       ) : (
         <>
           <h1>Your Search Results: </h1>
@@ -180,12 +210,88 @@ const Recipes = () => {
                   img={val.image}
                   state={val}
                   key={val.id}
+                  clicked={clicked.bind(this, val)}
                 />
               );
             })}
           </div>
         </>
       )}
+      <div className="Breakfast">
+        <h1>BreakFast</h1>{" "}
+        <div className="Rcp-Card-cont">
+          {breakfast.map((val) => {
+            return (
+              <SearchCard
+                name={val.title}
+                img={val.image}
+                key={val.id}
+                state={val}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="mainCourse">
+        <h1>Main Course</h1>
+        <div className="Rcp-Card-cont">
+          {mainCourse.map((val) => {
+            return (
+              <SearchCard
+                name={val.title}
+                img={val.image}
+                key={val.id}
+                state={val}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="snack">
+        <h1>Snacks</h1>
+        <div className="Rcp-Card-cont">
+          {snack.map((val) => {
+            return (
+              <SearchCard
+                name={val.title}
+                img={val.image}
+                key={val.id}
+                state={val}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="desserts">
+        <h1>Desserts</h1>
+        <div className="Rcp-Card-cont">
+          {desserts.map((val) => {
+            return (
+              <SearchCard
+                name={val.title}
+                img={val.image}
+                key={val.id}
+                state={val}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="drinks">
+        <h1>Drinks</h1>
+        <div className="Rcp-Card-cont">
+          {drinks.map((val) => {
+            return (
+              <SearchCard
+                name={val.title}
+                img={val.image}
+                key={val.id}
+                state={val}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

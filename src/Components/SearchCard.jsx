@@ -3,10 +3,24 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 const SearchCard = (props) => {
   const fevIcon = useRef();
+
+  const [isClicked, setIsClicked] = useState(true);
+
+  const setStyleFev = () => {
+    if (isClicked === true) {
+      fevIcon.current.style.color = "#f33861";
+      fevIcon.current.style.transition = ".3s";
+    } else {
+      fevIcon.current.style.color = "#fff";
+      fevIcon.current.style.transition = ".3s";
+    }
+  };
+  const clickEvnt = () => {
+    setIsClicked(!isClicked);
+  };
 
   return (
     <div className="searchCard-Container">
@@ -15,24 +29,14 @@ const SearchCard = (props) => {
         <img src={props.img} alt="Recipe" />
       </div>
       <div className="bottom">
-        <div
-          onClick={() => {
-            <ToastContainer
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />;
-            fevIcon.current.style.color = "#f33861";
-            fevIcon.current.style.transition = ".3s";
-          }}
-        >
-          <FavoriteIcon ref={fevIcon} />
+        <div onClick={props.clicked}>
+          <FavoriteIcon
+            ref={fevIcon}
+            onClick={() => {
+              clickEvnt();
+              setStyleFev();
+            }}
+          />
         </div>
         <div>
           <ShareIcon />
@@ -43,17 +47,6 @@ const SearchCard = (props) => {
           </Button>
         </NavLink>
       </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
     </div>
   );
 };

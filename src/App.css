@@ -249,7 +249,7 @@
   justify-content: center;
   width: 80%;
   padding: 0px 20px;
-  padding-top: 250px;
+  margin-top: 25rem;
 }
 .recipeContent .inputCont {
   padding: 20px 0px;
@@ -618,16 +618,15 @@ input[type="submit"]:hover {
 /* ////////////////--SearchCard--////////////////////////// */
 .searchCard-Container {
   width: 15%;
-  background-color: #ececec;
-
+  background-color: #e2e2e2;
+  color: #2b2a2a;
   border-radius: 3px;
-  margin: 10px;
+  margin: 40px 10px;
   transition: 1.2s;
 }
 .searchCard-Container:hover {
   transform: scale(1.1);
   transition: 0.3s;
-  background-color: #eaeee2;
 }
 .searchCard-Container .top {
   white-space: nowrap;
@@ -635,7 +634,7 @@ input[type="submit"]:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 20px 10px 20px 20px;
-  color: #000000;
+
   font-size: 1.2rem;
 }
 .searchCard-Container .top:hover {
@@ -690,4 +689,9 @@ input[type="submit"]:hover {
   bottom: 22px;
   color: #181614;
   border: 1px solid rgb(0, 0, 0);
+}
+@media only screen and (max-width: 1280px) {
+  .recipeContent {
+    margin-top: 55em;
+  }
 }
