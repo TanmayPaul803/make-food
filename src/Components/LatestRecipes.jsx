@@ -19,7 +19,7 @@ function LatestRecipes() {
   // useEffect(() => {
   //   const getRandomRecipeData = async () => {
   //     const response = await axios.get(
-  //       "https://api.spoonacular.com/recipes/random?apiKey=1a9b8c803ccf4b57a34259e418add293&number=5"
+  //       "https://api.spoonacular.com/recipes/random?apiKey=49510ae643c54e1dbe96171df5c05662&number=5"
   //     );
   //     setRandomRecipeData(
   //       response.data.recipes.map((val) => {
@@ -45,7 +45,7 @@ function LatestRecipes() {
             <RecipeCard
               key={val.RCP_ID}
               name={`${val.RCPname}`}
-              img={val.RCPimg}
+              id={val.RCP_ID}
               type={val.RCPtype}
               readyIn={val.RCPreadyIn}
               servings={val.RCPservings}

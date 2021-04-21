@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import backImg from "../rcpBackImg.png";
+import backImg from "../foodwall.jpg";
 import { Select, MenuItem } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import SearchCard from "./SearchCard";
+import BlogCard from "./BlogCard";
+import Footer from "./Footer";
 
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
@@ -26,24 +28,24 @@ const Recipes = () => {
   useEffect(() => {
     const getData = async () => {
       const dessertsRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=dessert`
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
       );
       setDesserts(dessertsRes.data.results);
       const snackRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=snack`
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
       );
       setsnack(snackRes.data.results);
 
       const breakfastRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=breakfast`
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
       );
       setBreakfast(breakfastRes.data.results);
       const mainCourseRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=main course`
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
       );
       setMainCourse(mainCourseRes.data.results);
       const drinksRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=1a9b8c803ccf4b57a34259e418add293&type=drink`
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
       );
       setDrinks(drinksRes.data.results);
     };
@@ -54,7 +56,7 @@ const Recipes = () => {
     <div className="recipes">
       <div className="hero">
         <img src={backImg} alt="" />
-        <h1>Welcome to Recipes</h1>
+        <h1 className="welcomeText">Welcome to Recipes</h1>
       </div>
       {/* ///////         User Selection          ////////// */}
       <div className="Rcp_content">
@@ -65,7 +67,7 @@ const Recipes = () => {
             e.preventDefault();
             const getdata = async () => {
               const response = await axios.get(
-                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}&number=12`
+                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=49510ae643c54e1dbe96171df5c05662&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}&number=12`
               );
               setRecipeData(response.data.results);
             };
@@ -73,7 +75,7 @@ const Recipes = () => {
           }}
         >
           <div>
-            <p>Name of the Recipe</p>
+            <p className="searchP">Name of the Recipe</p>
             <TextField
               id="filled-basic"
               label="Enter here"
@@ -91,7 +93,7 @@ const Recipes = () => {
           </div>
 
           <div>
-            <p>Cuisine</p>
+            <p className="searchP">Cuisine</p>
             <Select
               value={cuisine}
               onChange={(e) => {
@@ -109,7 +111,7 @@ const Recipes = () => {
             </Select>
           </div>
           <div>
-            <p>Diet</p>
+            <p className="searchP">Diet</p>
             <Select
               value={diet}
               onChange={(e) => {
@@ -126,7 +128,7 @@ const Recipes = () => {
             </Select>
           </div>
           <div>
-            <p>Include Ingredients</p>
+            <p className="searchP">Include Ingredients</p>
             <TextField
               id="filled-basic"
               label="Enter here"
@@ -143,7 +145,7 @@ const Recipes = () => {
             />
           </div>
           <div>
-            <p>Type</p>
+            <p className="searchP">Type</p>
             <Select
               value={type}
               onChange={(e) => {
@@ -162,7 +164,7 @@ const Recipes = () => {
             </Select>
           </div>
           <div>
-            <p>Intolerances</p>
+            <p className="searchP">Intolerances</p>
             <Select
               value={intolerance}
               onChange={(e) => {
@@ -181,7 +183,7 @@ const Recipes = () => {
           </div>
           <input
             type="submit"
-            value="Submit"
+            value="Search"
             onClick={() => {
               setFormSubmitTriggred(true);
             }}
@@ -191,7 +193,7 @@ const Recipes = () => {
       {/* /////////////////////////////////////////////////// */}
 
       {recipeData.length === 0 ? (
-        <h1>
+        <h1 className="SearchResponseText">
           {formSubmitTriggred === true && recipeData.length === 0
             ? " Nothing Found"
             : ""}
@@ -214,8 +216,8 @@ const Recipes = () => {
           </div>
         </>
       )}
-      <div className="Breakfast">
-        <h1>BreakFast</h1>{" "}
+      <div className="mealTypeDiv">
+        <h1 className="mealType">BreakFast</h1>{" "}
         <div className="Rcp-Card-cont">
           {breakfast.map((val) => {
             return (
@@ -229,8 +231,8 @@ const Recipes = () => {
           })}
         </div>
       </div>
-      <div className="mainCourse">
-        <h1>Main Course</h1>
+      <div className="mealTypeDiv">
+        <h1 className="mealType">Main Course</h1>
         <div className="Rcp-Card-cont">
           {mainCourse.map((val) => {
             return (
@@ -244,8 +246,8 @@ const Recipes = () => {
           })}
         </div>
       </div>
-      <div className="snack">
-        <h1>Snacks</h1>
+      <div className="mealTypeDiv">
+        <h1 className="mealType">Snacks</h1>
         <div className="Rcp-Card-cont">
           {snack.map((val) => {
             return (
@@ -259,8 +261,8 @@ const Recipes = () => {
           })}
         </div>
       </div>
-      <div className="desserts">
-        <h1>Desserts</h1>
+      <div className="mealTypeDiv">
+        <h1 className="mealType">Desserts</h1>
         <div className="Rcp-Card-cont">
           {desserts.map((val) => {
             return (
@@ -274,8 +276,8 @@ const Recipes = () => {
           })}
         </div>
       </div>
-      <div className="drinks">
-        <h1>Drinks</h1>
+      <div className="mealTypeDiv">
+        <h1 className="mealType">Drinks</h1>
         <div className="Rcp-Card-cont">
           {drinks.map((val) => {
             return (
@@ -289,6 +291,23 @@ const Recipes = () => {
           })}
         </div>
       </div>
+      <div className="latestBlog">
+        <div className="LtsBlgCont">
+          <h1>Latest Blog Post</h1>
+          <p className="BlogPara">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat
+            natus, alias iure rerum eum iste sed magnam tempora porro Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. Inventore
+            voluptas qui delectus maxime quae officiis,
+          </p>
+          <div className="blgCardContainerDiv">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

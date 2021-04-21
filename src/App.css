@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -445,7 +445,7 @@
 .SocialLinks {
   width: 100%;
   height: 100px;
-  margin: 20px 0px 0px;
+
   background-color: #181614;
 
   display: flex;
@@ -488,7 +488,7 @@
   height: 85%;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -504,7 +504,7 @@
 .footer-content .top .div1 .FtrContainer {
   width: 80%;
   height: fit-content;
-  margin-top: 50px;
+
   padding: 20px;
   background-color: rgba(75, 75, 75, 0.322);
 }
@@ -540,10 +540,12 @@
 /* ///////////////////--Recipes Component--/////////////////// */
 .recipes {
   width: 100%;
+  background-color: #f8f6f7;
 }
 .recipes .hero {
   width: 100%;
   height: 60vh;
+  position: relative;
 }
 .recipes .hero img {
   width: 100%;
@@ -552,10 +554,13 @@
 }
 .recipes .hero h1 {
   position: absolute;
-  top: 41%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5rem;
+  padding-left: 0;
+  font-size: 4.5rem;
+  color: #ccc;
+  background-color: #0000006c;
 }
 .Rcp_content {
   width: 100%;
@@ -563,7 +568,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: rgb(255, 255, 255);
+
   padding: 50px 0px;
   /* border-bottom: 2px solid rgb(150, 143, 143); */
   margin-bottom: 50px;
@@ -587,7 +592,6 @@ form {
   color: white;
 }
 .MuiSelect-select.MuiSelect-select {
-  padding-right: 0px !important;
   width: 100px !important;
 }
 body {
@@ -615,18 +619,26 @@ input[type="submit"]:hover {
   cursor: pointer;
   color: #3b0808;
 }
+.recipes h1 {
+  padding-left: 35px;
+  font-family: "Economica", sans-serif;
+  color: rgb(160, 65, 1);
+}
 /* ////////////////--SearchCard--////////////////////////// */
 .searchCard-Container {
-  width: 15%;
-  background-color: #e2e2e2;
+  /* width: 15.4%; */
+  width: 290px;
+  background-color: #fff;
   color: #2b2a2a;
-  border-radius: 3px;
-  margin: 40px 10px;
+  box-shadow: 0px 0px 8px rgb(192, 192, 192);
+  margin: 30px 10px 0px;
   transition: 1.2s;
 }
 .searchCard-Container:hover {
-  transform: scale(1.1);
+  transform: translate(0px, -15px);
   transition: 0.3s;
+  box-shadow: 0px 10px 5px grey;
+  cursor: pointer;
 }
 .searchCard-Container .top {
   white-space: nowrap;
@@ -690,6 +702,137 @@ input[type="submit"]:hover {
   color: #181614;
   border: 1px solid rgb(0, 0, 0);
 }
+.mealTypeDiv {
+  margin-top: 30px;
+  border-bottom: 2px dashed rgba(141, 141, 141, 0.726);
+  padding-bottom: 50px;
+}
+.mealType {
+  font-family: "Economica", sans-serif;
+  padding-left: 35px;
+}
+.searchP {
+  font-size: 1.2rem;
+  font-family: "Khand", sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #c26121;
+}
+.welcomeText {
+  font-family: "Berkshire Swash", cursive;
+}
+
+/* ///////////////-----Blog Post-----//////////////////////// */
+.latestBlog {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.LtsBlgCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.LtsBlgCont h1 {
+  margin-bottom: 25px;
+  font-family: "Khand", sans-serif;
+}
+.LtsBlgCont .BlogPara {
+  width: 60%;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.2rem;
+}
+.blgCardContainerDiv {
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blogCard {
+  width: 350px;
+  min-width: 350px;
+  height: fit-content;
+  background-color: #303030;
+  box-shadow: 0px 10px 10px gray;
+  color: #ccc;
+  margin: 30px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.blogCard .top {
+  width: 100%;
+  height: fit-content;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+.blogCard .top .imgwrapper {
+  width: 100%;
+  height: 180px;
+}
+.blogCard .top .imgwrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.blogCard .top .info {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+.blogCard .top .info .infoImgWrapper {
+  width: 40px;
+  height: 40px;
+
+  margin: 0px;
+}
+.blogCard .top .info div {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.blogCard .top .info .infoImgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.blogCard .top .info p {
+  margin-left: 8px;
+}
+.far {
+  margin-right: 2px;
+}
+.blgCardBttmCont {
+  padding: 35px 20px 30px 20px;
+}
+.BlogHeading {
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #dacfc8;
+}
+.blogPText {
+  margin: 0px 0px 0px 0px;
+  color: #808080;
+  text-align: justify;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content .top .div1 h1 {
+  padding-left: 0px;
+}
+
 @media only screen and (max-width: 1280px) {
   .recipeContent {
     margin-top: 55em;

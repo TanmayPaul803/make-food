@@ -170,8 +170,8 @@ function AboutRecipe(props) {
             <RecipeCard /> */}
           </div>
         </div>
-        {/* // {//////////////////////////////////////////////////////} */}
       </div>
+      {/* // {//////////////////////////////////////////////////////} */}
       <div className="SocialLinks">
         <div className="link">
           <div className="linkitem">

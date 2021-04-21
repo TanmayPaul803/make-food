@@ -14,6 +14,7 @@ import SearchedComponent from "./SearchedComponent";
 
 /// icons///
 import RecipeBook from "../Assets/4329557-cooking/svg/016-recipe book.svg";
+import Footer from "./Footer";
 
 function Home() {
   /// MUI Button///
@@ -129,7 +130,7 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="WebsiteFooter"></div>
+      <Footer />
     </div>
   );
 }
