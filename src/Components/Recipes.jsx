@@ -6,6 +6,8 @@ import axios from "axios";
 import SearchCard from "./SearchCard";
 import BlogCard from "./BlogCard";
 import Footer from "./Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
@@ -22,36 +24,38 @@ const Recipes = () => {
   const [breakfast, setBreakfast] = useState([]);
   const [mainCourse, setMainCourse] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  console.log(desserts);
-  const clicked = (e) => {};
 
-  useEffect(() => {
-    const getData = async () => {
-      const dessertsRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
-      );
-      setDesserts(dessertsRes.data.results);
-      const snackRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
-      );
-      setsnack(snackRes.data.results);
+  const [fevTag, setFevTag] = useState();
 
-      const breakfastRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
-      );
-      setBreakfast(breakfastRes.data.results);
-      const mainCourseRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
-      );
-      setMainCourse(mainCourseRes.data.results);
-      const drinksRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
-      );
-      setDrinks(drinksRes.data.results);
-    };
+  const getCardTitle = (e) => {};
 
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const dessertsRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
+  //     );
+  //     setDesserts(dessertsRes.data.results);
+  //     const snackRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
+  //     );
+  //     setsnack(snackRes.data.results);
+
+  //     const breakfastRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
+  //     );
+  //     setBreakfast(breakfastRes.data.results);
+  //     const mainCourseRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
+  //     );
+  //     setMainCourse(mainCourseRes.data.results);
+  //     const drinksRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
+  //     );
+  //     setDrinks(drinksRes.data.results);
+  //   };
+
+  //   getData();
+  // }, []);
   return (
     <div className="recipes">
       <div className="hero">
@@ -209,7 +213,8 @@ const Recipes = () => {
                   img={val.image}
                   state={val}
                   key={val.id}
-                  clicked={clicked.bind(this, val)}
+                  fev={setFevTag}
+                  cardTitle={getCardTitle.bind(this, val)}
                 />
               );
             })}
@@ -308,6 +313,17 @@ const Recipes = () => {
         </div>
       </div>
       <Footer />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

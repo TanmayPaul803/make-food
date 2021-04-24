@@ -5,6 +5,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import AboutCatagory from "./Components/AboutCatagory";
 import AboutRecipe from "./Components/AboutRecipe";
 import Recipes from "./Components/Recipes";
+// import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   return (

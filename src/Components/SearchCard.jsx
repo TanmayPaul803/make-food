@@ -1,24 +1,28 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SearchCard = (props) => {
+  const [isClicked, setIsClicked] = useState();
+
   const fevIcon = useRef();
-
-  const [isClicked, setIsClicked] = useState(true);
-
-  const setStyleFev = () => {
-    if (isClicked === true) {
-      fevIcon.current.style.color = "#f33861";
-      fevIcon.current.style.transition = ".3s";
+  useEffect(() => {
+    if (isClicked === undefined) {
+      toast();
+    } else if (isClicked === true) {
+      fevIcon.current.style.color = "red";
+      toast.success(`${props.name} is added to favourite`);
     } else {
-      fevIcon.current.style.color = "#fff";
-      fevIcon.current.style.transition = ".3s";
+      fevIcon.current.style.color = "grey";
+      toast.error(`${props.name} is removed from favourite`);
     }
-  };
-  const clickEvnt = () => {
+  }, [isClicked]);
+
+  const setfev = () => {
+    props.fev(isClicked);
     setIsClicked(!isClicked);
   };
 
@@ -29,14 +33,9 @@ const SearchCard = (props) => {
         <img src={props.img} alt="Recipe" />
       </div>
       <div className="bottom">
-        <div onClick={props.clicked}>
-          <FavoriteIcon
-            ref={fevIcon}
-            onClick={() => {
-              clickEvnt();
-              setStyleFev();
-            }}
-          />
+        <div onClick={setfev}>
+          <FavoriteIcon ref={fevIcon} onClick={props.cardTitle} />
+          {}
         </div>
         <div>
           <ShareIcon />
