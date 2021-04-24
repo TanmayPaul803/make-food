@@ -14,9 +14,11 @@ const SearchCard = (props) => {
       toast();
     } else if (isClicked === true) {
       fevIcon.current.style.color = "red";
+      fevIcon.current.style.transition = ".2s";
       toast.success(`${props.name} is added to favourite`);
     } else {
       fevIcon.current.style.color = "grey";
+      fevIcon.current.style.transition = ".2s";
       toast.error(`${props.name} is removed from favourite`);
     }
   }, [isClicked]);
