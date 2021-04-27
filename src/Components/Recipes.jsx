@@ -16,7 +16,6 @@ const Recipes = () => {
   const [intolerance, setIntolerance] = useState("");
   const [nameInput, setNameInput] = useState("");
   const [includeIngdredient, setIncludeIngdredient] = useState("");
-
   const [recipeData, setRecipeData] = useState([]);
   const [formSubmitTriggred, setFormSubmitTriggred] = useState(false);
   const [desserts, setDesserts] = useState([]);
@@ -24,10 +23,18 @@ const Recipes = () => {
   const [breakfast, setBreakfast] = useState([]);
   const [mainCourse, setMainCourse] = useState([]);
   const [drinks, setDrinks] = useState([]);
+  const [fevList, setFevList] = useState([]);
+  const [deleteFev, setDeleteFev] = useState();
 
-  const [fevTag, setFevTag] = useState();
+  const addFev = (Card) => {
+    console.log(fevList.some(Card));
 
-  const getCardTitle = (e) => {};
+    setFevList((prevData) => {
+      return [...prevData, Card.title];
+    });
+    setDeleteFev();
+  };
+  console.log(fevList);
 
   useEffect(() => {
     const getData = async () => {
@@ -213,8 +220,7 @@ const Recipes = () => {
                   img={val.image}
                   state={val}
                   key={val.id}
-                  fev={setFevTag}
-                  cardTitle={getCardTitle.bind(this, val)}
+                  getCardName={addFev.bind(this, val)}
                 />
               );
             })}
@@ -231,8 +237,6 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
-                fev={setFevTag}
-                cardTitle={getCardTitle.bind(this, val)}
               />
             );
           })}
@@ -248,8 +252,6 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
-                fev={setFevTag}
-                cardTitle={getCardTitle.bind(this, val)}
               />
             );
           })}
@@ -265,8 +267,6 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
-                fev={setFevTag}
-                cardTitle={getCardTitle.bind(this, val)}
               />
             );
           })}
@@ -282,8 +282,6 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
-                fev={setFevTag}
-                cardTitle={getCardTitle.bind(this, val)}
               />
             );
           })}
@@ -299,8 +297,6 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
-                fev={setFevTag}
-                cardTitle={getCardTitle.bind(this, val)}
               />
             );
           })}

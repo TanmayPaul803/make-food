@@ -24,7 +24,6 @@ const SearchCard = (props) => {
   }, [isClicked]);
 
   const setfev = () => {
-    props.fev(isClicked);
     setIsClicked(!isClicked);
   };
 
@@ -36,7 +35,7 @@ const SearchCard = (props) => {
       </div>
       <div className="bottom">
         <div onClick={setfev}>
-          <FavoriteIcon ref={fevIcon} onClick={props.cardTitle} />
+          <FavoriteIcon ref={fevIcon} onClick={props.getCardName} />
           {}
         </div>
         <div>
