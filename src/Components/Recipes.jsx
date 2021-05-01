@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import backImg from "../foodwall.jpg";
 import { Select, MenuItem } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
@@ -6,8 +6,9 @@ import axios from "axios";
 import SearchCard from "./SearchCard";
 import BlogCard from "./BlogCard";
 import Footer from "./Footer";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GlobalName } from "./FevRecipeContext";
 
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
@@ -23,46 +24,52 @@ const Recipes = () => {
   const [breakfast, setBreakfast] = useState([]);
   const [mainCourse, setMainCourse] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  const [fevList, setFevList] = useState([]);
-  const [deleteFev, setDeleteFev] = useState();
+  const [fevRecipe, setFevRecipe] = useContext(GlobalName);
 
-  const addFev = (Card) => {
-    console.log(fevList.some(Card));
-
-    setFevList((prevData) => {
-      return [...prevData, Card.title];
+  const addFev = (card) => {
+    const isAvailable = fevRecipe.some((eachRecipe) => {
+      return eachRecipe.id === card.id;
     });
-    setDeleteFev();
+
+    if (!isAvailable) {
+      setFevRecipe(() => {
+        return [...fevRecipe, card];
+      });
+    } else {
+      const anotherFevRecipe = [...fevRecipe];
+      const index = fevRecipe.indexOf(card);
+      anotherFevRecipe.splice(index, 1);
+      setFevRecipe(anotherFevRecipe);
+    }
   };
-  console.log(fevList);
+  console.log(fevRecipe);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const dessertsRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
+  //     );
+  //     setDesserts(dessertsRes.data.results);
+  //     const snackRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
+  //     );
+  //     setsnack(snackRes.data.results);
 
-  useEffect(() => {
-    const getData = async () => {
-      const dessertsRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
-      );
-      setDesserts(dessertsRes.data.results);
-      const snackRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
-      );
-      setsnack(snackRes.data.results);
+  //     const breakfastRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
+  //     );
+  //     setBreakfast(breakfastRes.data.results);
+  //     const mainCourseRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
+  //     );
+  //     setMainCourse(mainCourseRes.data.results);
+  //     const drinksRes = await axios.get(
+  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
+  //     );
+  //     setDrinks(drinksRes.data.results);
+  //   };
 
-      const breakfastRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
-      );
-      setBreakfast(breakfastRes.data.results);
-      const mainCourseRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
-      );
-      setMainCourse(mainCourseRes.data.results);
-      const drinksRes = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
-      );
-      setDrinks(drinksRes.data.results);
-    };
-
-    getData();
-  }, []);
+  //   getData();
+  // }, []);
   return (
     <div className="recipes">
       <div className="hero">
@@ -78,7 +85,7 @@ const Recipes = () => {
             e.preventDefault();
             const getdata = async () => {
               const response = await axios.get(
-                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=49510ae643c54e1dbe96171df5c05662&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}&number=12`
+                `https://api.spoonacular.com/recipes/complexSearch?query=${nameInput}&apiKey=1a9b8c803ccf4b57a34259e418add293&cuisine=${cuisine}&diet=${diet}&includeIngredients=${includeIngdredient}&type=${type}&intolerances=${intolerance}&number=12`
               );
               setRecipeData(response.data.results);
             };
@@ -237,6 +244,7 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
+                getCardName={addFev.bind(this, val)}
               />
             );
           })}
@@ -252,6 +260,7 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
+                getCardName={addFev.bind(this, val)}
               />
             );
           })}
@@ -267,6 +276,7 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
+                getCardName={addFev.bind(this, val)}
               />
             );
           })}
@@ -282,6 +292,7 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
+                getCardName={addFev.bind(this, val)}
               />
             );
           })}
@@ -297,6 +308,7 @@ const Recipes = () => {
                 img={val.image}
                 key={val.id}
                 state={val}
+                getCardName={addFev.bind(this, val)}
               />
             );
           })}
