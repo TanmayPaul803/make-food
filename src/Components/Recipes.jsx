@@ -9,7 +9,7 @@ import Footer from "./Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalName } from "./FevRecipeContext";
-
+import Tilt from "react-parallax-tilt";
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
   const [diet, setDiet] = useState("");
@@ -324,9 +324,15 @@ const Recipes = () => {
             voluptas qui delectus maxime quae officiis,
           </p>
           <div className="blgCardContainerDiv">
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            <Tilt glareEnable={true} glareMaxOpacity={0.45} scale={1.1}>
+              <BlogCard />
+            </Tilt>
+            <Tilt glareEnable={true} glareMaxOpacity={0.45} scale={1.1}>
+              <BlogCard />
+            </Tilt>
+            <Tilt glareEnable={true} glareMaxOpacity={0.45} scale={1.1}>
+              <BlogCard />
+            </Tilt>
           </div>
         </div>
       </div>
