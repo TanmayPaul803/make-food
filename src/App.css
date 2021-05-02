@@ -497,27 +497,77 @@
 .footer-content .top .div1 {
   width: 500px;
   height: 98%;
-  color: white;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 .footer-content .top .div1 .FtrContainer {
-  width: 80%;
   height: fit-content;
-
-  padding: 20px;
+  width: 80%;
+  height: 80%;
+  padding: 25px;
   background-color: rgba(75, 75, 75, 0.322);
 }
 .FtrContainer p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: justify;
+  color: #b9b9b9;
 }
 .footer-content .top .div2 {
   width: 400px;
   height: 98%;
-  background-color: rgb(42, 165, 144);
+  background-color: rgba(61, 61, 61, 0.219);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+.newsLetterContainer p {
+  margin-bottom: 5px;
+  color: #969696;
+}
+.newsletterTXT {
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-family: "Economica", sans-serif;
+}
+.newsLetterContainer {
+  width: 100%;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  font-size: 0.85rem;
+}
+.footer-content .top .div2 form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(65, 65, 65);
+  padding-left: 5px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.footer-content .top .div2 form input:first-child {
+  width: 65%;
+  background-color: #8bc34a00;
+  color: wheat;
+}
+.newsLetterSubmitButton {
+  transform: translate(0px, 0px) !important;
+  margin: 4px;
+  width: 100px;
+  border-radius: 2px;
+
+  color: white;
+  background-color: #dd104e !important;
 }
 .footer-content .top .div3 {
   width: 400px;

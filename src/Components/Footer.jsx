@@ -58,7 +58,36 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="div2"></div>
+            <div className="div2">
+              <p className="newsletterTXT">Newsletter</p>
+              <div className="newsLetterContainer">
+                <p>
+                  Sign up to get the latest news, blog, new recepies and more...
+                </p>
+                <form
+                  action=""
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    alert(
+                      "You are successfully subscribed to our newsletter. "
+                    );
+                  }}
+                >
+                  <input type="text" placeholder="Email address" />
+                  <input
+                    type="submit"
+                    value="Submit"
+                    className="newsLetterSubmitButton"
+                  />
+                </form>
+
+                <p>@ 2021 DevDocs project 11</p>
+                <p>
+                  Designed by Tanmay Paul, Powered by{" "}
+                  <span>Spoonacular Api</span>
+                </p>
+              </div>
+            </div>
             <div className="div3"></div>
           </div>
           <div className="bottom"></div>
