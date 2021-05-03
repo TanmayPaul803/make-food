@@ -88,7 +88,28 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="div3"></div>
+            <div className="div3">
+              <div className="ftrContactCont">
+                <div className="div">
+                  <div className="iconCont">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                  </div>
+                  <p>Mahanandapally, Jhaljhalia, Malda</p>
+                </div>
+                <div className="div">
+                  <div className="iconCont">
+                    <i class="fas fa-phone-alt fa-2x"></i>
+                  </div>
+                  <p>+912548635874</p>
+                </div>
+                <div className="div">
+                  <div className="iconCont">
+                    <i class="fas fa-envelope fa-2x"></i>
+                  </div>
+                  <p>example@gmail.com</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="bottom"></div>
         </div>
