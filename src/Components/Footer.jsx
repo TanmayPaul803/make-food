@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import FastfoodRoundedIcon from "@material-ui/icons/FastfoodRounded";
 
 const Footer = () => {
   return (
@@ -44,7 +46,11 @@ const Footer = () => {
         <div className="footer-content">
           <div className="top">
             <div className="div1">
-              <h1>Website</h1>
+              <div className="ftrLogo">
+                <FastfoodRoundedIcon className="logo" />
+                <h1>makeFood</h1>
+              </div>
+
               <div className="FtrContainer">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -111,7 +117,29 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="bottom"></div>
+          <div className="bottom">
+            <div className="FtrBtmCont">
+              <div>
+                <p>
+                  © 2021 DevDocs project 11.Created by <span>Tanmay Paul</span>
+                </p>
+              </div>
+              <div>
+                <ul>
+                  <NavLink to="/foodWebsite">
+                    <li>Home</li>
+                  </NavLink>
+                  <NavLink to="/Recipes">
+                    <li>Recipes</li>
+                  </NavLink>
+                  <li>About Me</li>
+                  <li>Pages</li>
+                  <li>Blog</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

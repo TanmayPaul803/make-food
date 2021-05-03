@@ -8,10 +8,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"); */
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .CatGallayCardDiv {
@@ -485,6 +486,8 @@
   background-color: rgba(0, 0, 0, 0.692);
   display: flex;
   flex-direction: column;
+  outline: 2px dashed rgba(117, 117, 117, 0.288);
+  outline-offset: -8px;
 }
 .footer-content .top {
   height: 85%;
@@ -504,12 +507,21 @@
   flex-direction: column;
   padding: 10px;
 }
+.footer-content .top .div1 .ftrLogo {
+  display: flex;
+  align-items: center;
+}
 .footer-content .top .div1 .FtrContainer {
   height: fit-content;
   width: 400px;
   height: 80%;
   padding: 25px;
   background-color: rgba(75, 75, 75, 0.322);
+}
+.footer-content .top .div1 h1 {
+  font-size: 2rem;
+  color: rgba(194, 194, 194, 0.616);
+  font-family: "Berkshire Swash", cursive;
 }
 .FtrContainer p {
   font-size: 1rem;
@@ -538,6 +550,7 @@
   text-decoration: underline;
   text-underline-offset: 5px;
   font-family: "Economica", sans-serif;
+  color: #9c9c9c;
 }
 .newsLetterContainer {
   position: absolute;
@@ -583,7 +596,7 @@
   display: flex;
   align-items: center;
   margin: 8px 5px;
-  color: #fff;
+  color: rgb(180, 180, 180);
 }
 .footer-content .top .div3 .ftrContactCont div .iconCont {
   width: 50px;
@@ -591,10 +604,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7e7e7e;
+  background-color: #666666;
   border-radius: 25px;
   margin-right: 10px;
   color: #000000;
+}
+.footer-content .bottom {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+.footer-content .bottom .FtrBtmCont {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px dashed rgba(82, 82, 82, 0.74);
+}
+.footer-content .bottom .FtrBtmCont div:first-child {
+  color: rgb(207, 207, 207);
+}
+.footer-content .bottom .FtrBtmCont div:first-child span {
+  color: #cf974d;
+}
+.footer-content .bottom .FtrBtmCont div:last-child {
+  display: inline-block;
+}
+.footer-content .bottom .FtrBtmCont div:last-child ul {
+  list-style: none;
+  display: inline-block;
+}
+.footer-content .bottom .FtrBtmCont div:last-child ul li {
+  display: inline-block;
+  padding: 0px 6px;
+  font-size: 0.9rem;
+  color: #d48927;
+  transition: 0.2s;
+}
+.footer-content .bottom .FtrBtmCont div:last-child ul li:hover {
+  color: white;
+  cursor: pointer;
+  text-decoration: 2px underline;
+  transition: 0.2s;
+  text-underline-offset: -25px;
+}
+.footer-content .bottom .FtrBtmCont div:last-child ul li:not(:nth-child(6)) {
+  border-right: 1.9px dashed rgb(75, 75, 75);
 }
 .Recipe-Info-Tittle {
   display: flex;
