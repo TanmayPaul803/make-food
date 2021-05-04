@@ -87,15 +87,13 @@ video {
 }
 .aboutMe {
   width: 100%;
-
+  position: relative;
   background-color: rgb(236, 236, 236);
   display: flex;
   flex-wrap: wrap-reverse;
 }
 .aboutMe .Abtext {
   width: 50%;
-  height: 100%;
-  margin: 20px;
 }
 .aboutMe .Abtext h1 {
   padding-left: 50px;
@@ -233,29 +231,32 @@ video {
 }
 .ourGoal {
   width: 100%;
-  min-height: 40vh;
+  /* min-height: 40vh; */
   background-color: rgb(212, 212, 212);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  padding: 8rem;
 }
 .ourGoal .div {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   margin: 10px;
+  border-radius: 1rem;
 }
 .ourGoal .div span {
-  margin-top: 15px;
+  margin: 15px;
   height: 5px;
   width: 50px;
   background-color: rgb(255, 170, 91);
 }
+
 .ourGoal .div p {
   width: 300px;
   text-align: center;
-  margin-top: 15px;
 }
 .ourGoal .div .ICON-Cont {
   width: 80px;

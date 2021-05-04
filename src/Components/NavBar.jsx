@@ -11,14 +11,10 @@ const NavBar = () => {
         <nav>
           <ul className="nav-links">
             <NavLink to="/foodWebsite">
-              <li>
-                <a href="#">Home</a>
-              </li>
+              <li>Home</li>
             </NavLink>
             <NavLink to="/Recipes">
-              <li>
-                <a href="#">Recipes</a>
-              </li>
+              <li>Recipes</li>
             </NavLink>
 
             <li>

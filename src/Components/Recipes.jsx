@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalName } from "./FevRecipeContext";
 import Tilt from "react-parallax-tilt";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 const Recipes = () => {
   const [cuisine, setCuisine] = useState("");
   const [diet, setDiet] = useState("");
@@ -24,7 +25,7 @@ const Recipes = () => {
   const [breakfast, setBreakfast] = useState([]);
   const [mainCourse, setMainCourse] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  const [fevRecipe, setFevRecipe] = useContext(GlobalName);
+  const [fevRecipe, setFevRecipe] = useContext(GlobalName); //desserts&&snack&&breakfast&&mainCourse&&drinks&&drinks
 
   const addFev = (card) => {
     const isAvailable = fevRecipe.some((eachRecipe) => {
@@ -42,7 +43,7 @@ const Recipes = () => {
       setFevRecipe(anotherFevRecipe);
     }
   };
-  console.log(fevRecipe);
+  console.log(drinks);
   // useEffect(() => {
   //   const getData = async () => {
   //     const dessertsRes = await axios.get(
@@ -234,86 +235,106 @@ const Recipes = () => {
           </div>
         </>
       )}
-      <div className="mealTypeDiv">
-        <h1 className="mealType">BreakFast</h1>{" "}
-        <div className="Rcp-Card-cont">
-          {breakfast.map((val) => {
-            return (
-              <SearchCard
-                name={val.title}
-                img={val.image}
-                key={val.id}
-                state={val}
-                getCardName={addFev.bind(this, val)}
-              />
-            );
-          })}
-        </div>
-      </div>
-      <div className="mealTypeDiv">
-        <h1 className="mealType">Main Course</h1>
-        <div className="Rcp-Card-cont">
-          {mainCourse.map((val) => {
-            return (
-              <SearchCard
-                name={val.title}
-                img={val.image}
-                key={val.id}
-                state={val}
-                getCardName={addFev.bind(this, val)}
-              />
-            );
-          })}
-        </div>
-      </div>
-      <div className="mealTypeDiv">
-        <h1 className="mealType">Snacks</h1>
-        <div className="Rcp-Card-cont">
-          {snack.map((val) => {
-            return (
-              <SearchCard
-                name={val.title}
-                img={val.image}
-                key={val.id}
-                state={val}
-                getCardName={addFev.bind(this, val)}
-              />
-            );
-          })}
-        </div>
-      </div>
-      <div className="mealTypeDiv">
-        <h1 className="mealType">Desserts</h1>
-        <div className="Rcp-Card-cont">
-          {desserts.map((val) => {
-            return (
-              <SearchCard
-                name={val.title}
-                img={val.image}
-                key={val.id}
-                state={val}
-                getCardName={addFev.bind(this, val)}
-              />
-            );
-          })}
-        </div>
-      </div>
-      <div className="mealTypeDiv">
-        <h1 className="mealType">Drinks</h1>
-        <div className="Rcp-Card-cont">
-          {drinks.map((val) => {
-            return (
-              <SearchCard
-                name={val.title}
-                img={val.image}
-                key={val.id}
-                state={val}
-                getCardName={addFev.bind(this, val)}
-              />
-            );
-          })}
-        </div>
-      </div>
+      {drinks.length === 0 ? (
+        <>
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <Player
+            autoplay
+            loop
+            src="https://assets9.lottiefiles.com/temp/lf20_Jlg1O6.json"
+            style={{ height: "300px", width: "300px" }}
+          >
+            <Controls
+              visible={false}
+              buttons={["play", "repeat", "frame", "debug"]}
+            />
+          </Player>
+        </>
+      ) : (
+        <>
+          <div className="mealTypeDiv">
+            <h1 className="mealType">BreakFast</h1>{" "}
+            <div className="Rcp-Card-cont">
+              {breakfast.map((val) => {
+                return (
+                  <SearchCard
+                    name={val.title}
+                    img={val.image}
+                    key={val.id}
+                    state={val}
+                    getCardName={addFev.bind(this, val)}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mealTypeDiv">
+            <h1 className="mealType">Main Course</h1>
+            <div className="Rcp-Card-cont">
+              {mainCourse.map((val) => {
+                return (
+                  <SearchCard
+                    name={val.title}
+                    img={val.image}
+                    key={val.id}
+                    state={val}
+                    getCardName={addFev.bind(this, val)}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="mealTypeDiv">
+            <h1 className="mealType">Snacks</h1>
+            <div className="Rcp-Card-cont">
+              {snack.map((val) => {
+                return (
+                  <SearchCard
+                    name={val.title}
+                    img={val.image}
+                    key={val.id}
+                    state={val}
+                    getCardName={addFev.bind(this, val)}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="mealTypeDiv">
+            <h1 className="mealType">Desserts</h1>
+            <div className="Rcp-Card-cont">
+              {desserts.map((val) => {
+                return (
+                  <SearchCard
+                    name={val.title}
+                    img={val.image}
+                    key={val.id}
+                    state={val}
+                    getCardName={addFev.bind(this, val)}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="mealTypeDiv">
+            <h1 className="mealType">Drinks</h1>
+            <div className="Rcp-Card-cont">
+              {drinks.map((val) => {
+                return (
+                  <SearchCard
+                    name={val.title}
+                    img={val.image}
+                    key={val.id}
+                    state={val}
+                    getCardName={addFev.bind(this, val)}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </>
+      )}
       <div className="latestBlog">
         <div className="LtsBlgCont">
           <h1>Latest Blog Post</h1>

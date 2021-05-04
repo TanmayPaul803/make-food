@@ -604,7 +604,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #666666;
+  background-color: #bdbdbd;
   border-radius: 25px;
   margin-right: 10px;
   color: #000000;
@@ -631,7 +631,6 @@
   color: #cf974d;
 }
 .footer-content .bottom .FtrBtmCont div:last-child {
-  display: inline-block;
 }
 .footer-content .bottom .FtrBtmCont div:last-child ul {
   list-style: none;
