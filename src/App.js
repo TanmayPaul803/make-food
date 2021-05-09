@@ -4,20 +4,24 @@ import { Route, Switch } from "react-router-dom";
 import AboutCatagory from "./Components/AboutCatagory";
 import AboutRecipe from "./Components/AboutRecipe";
 import Recipes from "./Components/Recipes";
+import ContactUs from "./Components/ContactUs";
+import Footer from "./Components/Footer";
 
 // import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   return (
-    <>
+    <div className="App">
       <NavBar></NavBar>
+
       <Switch>
         <Route path="/foodWebsite" component={Home} />
         <Route path="/name" component={AboutCatagory} />
         <Route path="/aboutRecipe" component={AboutRecipe} />
         <Route path="/Recipes" component={Recipes} />
+        <Route path="/contactUs" component={ContactUs} />
       </Switch>
-    </>
+    </div>
   );
 };
 export default App;

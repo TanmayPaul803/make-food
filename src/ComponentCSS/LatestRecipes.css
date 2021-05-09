@@ -1,14 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Economica&display=swap");
+
 .recipeMainDiv {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 50px 30px 10px;
-  background-color: rgb(199, 199, 199);
+  padding: 50px 30px 50px;
 }
 .recipeMainDiv h1 {
   width: 100%;
   text-align: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3rem;
+  opacity: 0.7;
+  padding: 10px 0px;
 }
 .recipesViewAll {
   width: 100%;
@@ -22,10 +26,10 @@
   flex-wrap: wrap;
   padding-top: 50px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .recipeCard {
-  margin: 0px 20px;
+  margin: 20px 20px;
   padding: 0;
   transition: 0.3s;
 }
@@ -37,8 +41,7 @@
 .recipeCard .card {
   width: 280px;
   height: fit-content;
-
-  background-color: rgb(33, 37, 37);
+  background-color: rgb(59, 59, 59);
 }
 .recipeCard .card .top {
   width: 100%;
@@ -59,16 +62,15 @@
   flex-direction: column;
 }
 .recipeCard .card .info .name {
-  background-color: rgb(76, 88, 78);
-  padding: 10px 0px;
-  color: rgb(214, 214, 214);
-  font-family: "Economica", sans-serif;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px 10px 20px 20px;
+  font-size: 1.2rem;
+  background-color: rgb(252, 211, 185);
 }
-.recipeCard .card .info .name p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding-left: 10px;
-}
+
 .recipeCard .card .info .about {
   padding: 15px;
 }
@@ -80,4 +82,12 @@
   color: beige;
   padding-bottom: 5px;
   margin-bottom: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .recipeCard {
+    margin: 10px;
+  }
+  .recipeCard .card {
+    width: 210px;
+  }
 }

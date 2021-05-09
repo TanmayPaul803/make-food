@@ -35,7 +35,7 @@
   border-radius: 5px;
 }
 .text {
-  height: 30%;
+  height: 20%;
   width: 100%;
   text-align: center;
   position: absolute;
@@ -204,7 +204,7 @@
 }
 .availableDishes-Name h1 {
   writing-mode: vertical-rl;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   opacity: 0.5;
 }
 .availableDishes {
@@ -221,7 +221,7 @@
   column-count: 2;
 }
 .availableDishes ol li {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin: 0px 50px;
   padding: 20px;
   font-family: "Amatic SC", cursive;
@@ -252,7 +252,7 @@
   justify-content: center;
   width: 80%;
   padding: 0px 20px;
-  margin-top: 25rem;
+  margin-top: 30rem;
 }
 .recipeContent .inputCont {
   padding: 20px 0px;
@@ -278,7 +278,7 @@
 }
 .RCPinfoTop .name {
   width: 100%;
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   font-family: "Abel", sans-serif;
 }
@@ -301,7 +301,7 @@
   padding: 20px 0px;
 }
 .RCP-hr {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .imgCont {
   width: 480px;
@@ -325,7 +325,7 @@
   font-family: "Saira Condensed", sans-serif;
 }
 .RCP-infoBottom .desc p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: "Khand", sans-serif;
 }
 .RCP-infoBottom .desc p b {
@@ -400,7 +400,7 @@
   color: #be700a;
 }
 .directions .list p {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   margin-bottom: 30px;
   font-family: "Inter", sans-serif;
 }
@@ -409,7 +409,8 @@
   font-family: "Saira Condensed", sans-serif;
 }
 .simmiler-cat {
-  min-width: 90%;
+  min-width: 100%;
+  margin-bottom: 100px;
 }
 .similler-cat-title-container {
   width: 100%;
@@ -417,6 +418,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 50px 0px;
 }
 .similler-cat-title-container .div {
   width: 32%;
@@ -481,7 +483,7 @@
   justify-content: center;
 }
 .footer-content {
-  width: 80%;
+  width: 90%;
   height: 90%;
   background-color: rgba(0, 0, 0, 0.692);
   display: flex;
@@ -493,14 +495,14 @@
   height: 85%;
 
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
+
   align-items: center;
 }
 .footer-content .top .div1 {
   width: fit-content;
   height: 98%;
-  margin-right: 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -537,7 +539,6 @@
   padding: 10px;
   color: white;
   position: relative;
-  margin-right: 20px;
 }
 .newsLetterContainer p {
   margin-bottom: 5px;
@@ -963,9 +964,172 @@ input[type="submit"]:hover {
 .footer-content .top .div1 h1 {
   padding-left: 0px;
 }
+.contactUS {
+  width: 100%;
+  background-color: #f7f8fc;
+}
+.CntUSimgWrapper {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+.CntUSimgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ContactUsHeroTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 0;
+  font-size: 2rem;
+  color: #ccc;
+  background-color: #0000006c;
+}
+.ContactUsHeroTxt h1 {
+  font-family: "Economica", sans-serif;
+}
+.ContactDetails {
+  width: 100%;
 
-@media only screen and (max-width: 1280px) {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+.contactForm {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formDiv {
+  margin: 2rem;
+  width: 48em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 50px rgb(160, 160, 160);
+  justify-content: center;
+  border-radius: 5px;
+  min-width: 40rem;
+  padding: 5rem 2.5rem;
+  outline: 2px dashed rgba(128, 128, 128, 0.493);
+  outline-offset: -15px;
+  -moz-outline-radius: 5px;
+  background-color: #fff;
+}
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.formDiv form div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem;
+  width: 100%;
+}
+.contactForm form div label {
+  margin-bottom: 0px;
+}
+
+.contactForm form .nameCont {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+.contactForm form .nameCont div {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem;
+  width: 49%;
+}
+
+.contactForm form input,
+textarea {
+  height: 4rem;
+  border-radius: 3px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  border: 1px solid grey;
+  color: rgb(71, 71, 71);
+}
+.contactForm form input[type="submit"] {
+  margin-top: 2.2rem;
+  border: 0px solid grey;
+  width: 100%;
+
+  font-size: 1.2rem;
+}
+.contactForm form input[type="submit"]:hover {
+  background-color: #1f2022;
+  color: wheat;
+  box-shadow: 0px 0px 5px #1f2022;
+}
+.contactForm form label {
+  font-size: 1.2rem;
+}
+
+.contactForm form textarea {
+  height: 9rem;
+  border-radius: 3px;
+}
+form span {
+  color: red;
+}
+.contactText {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contactText .Continfo {
+  margin-top: 150px;
+  padding: 0px 50px;
+}
+.contactText .Continfo h1 {
+  font-size: 4rem;
+  font-family: "Bebas Neue", cursive;
+  color: #1f2022;
+}
+.contactText .Continfo p {
+  margin-top: 20px;
+  line-height: 25px;
+  font-size: 1.2rem;
+  color: #505050;
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 80%;
+  }
   .recipeContent {
     margin-top: 55em;
+  }
+  .footer-content .top .div1 .FtrContainer {
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 5px;
+  }
+  .footer {
+    height: 500px;
+  }
+  .footer-content {
+    width: 96%;
+    padding: 5px;
+  }
+  .footer-content .top .div1 {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 60%;
   }
 }

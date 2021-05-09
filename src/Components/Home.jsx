@@ -9,13 +9,14 @@ import KeywordComponent from "./KeywordComponent.jsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import Splide_Div from "./Splide_Div";
+
 import SearchedComponent from "./SearchedComponent";
 
 /// icons///
 import RecipeBook from "../Assets/4329557-cooking/svg/016-recipe book.svg";
 import Footer from "./Footer";
-
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 function Home() {
   /// MUI Button///
   const useStyles = makeStyles((theme) => ({
@@ -41,11 +42,18 @@ function Home() {
 
       <LatestRecipes />
       <div className="featuredRCP">
-        <div className="left">
-          <Splide_Div />
-        </div>
+        <Splide className="FRCPsplide">
+          <SplideSlide className="FRCPsplideSlide">
+            <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
+            <p>Name</p>
+          </SplideSlide>
+          <SplideSlide>
+            <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" />
+          </SplideSlide>
+        </Splide>
+
         <div className="right">
-          <div className="div">
+          <div>
             <h1>Featured Recipe</h1>
             <p>
               aaaLorem ipsum dolor, sit amet consectetur adipisicing elit.

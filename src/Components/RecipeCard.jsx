@@ -14,9 +14,7 @@ function RecipeCard(props) {
           <p></p>
         </div>
         <div className="info">
-          <div className="name">
-            <p>{props.name}</p>
-          </div>
+          <div className="name">{props.name}</div>
           <div className="about">
             <p>
               <span>Ready In:</span>
@@ -27,9 +25,6 @@ function RecipeCard(props) {
             </p>
             <p>
               <span>Dish Type:</span> {props.type ? "Veg" : "Nonveg"}
-            </p>
-            <p>
-              <span>ID:</span>
             </p>
           </div>
         </div>

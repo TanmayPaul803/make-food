@@ -3,6 +3,7 @@ import axios from "axios";
 import "../App.css";
 import { NavLink } from "react-router-dom";
 import { LocalFlorist } from "@material-ui/icons";
+import Footer from "./Footer";
 
 function AboutCatagory(props) {
   console.log(props);

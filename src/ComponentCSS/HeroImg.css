@@ -45,7 +45,7 @@ video {
 .content h1 {
   font-family: "Berkshire Swash", cursive;
   /* font-family: "Bebas Neue", cursive; */
-  font-size: 12rem;
+  font-size: 9rem;
   color: white;
   text-shadow: 0px 3px 5px rgb(61, 61, 61);
 }
@@ -90,14 +90,13 @@ video {
   position: relative;
   background-color: rgb(236, 236, 236);
   display: flex;
-  flex-wrap: wrap-reverse;
 }
 .aboutMe .Abtext {
   width: 50%;
 }
 .aboutMe .Abtext h1 {
   padding-left: 50px;
-  padding-top: 200px;
+  padding-top: 100px;
   font-size: 4rem;
   font-family: "Bebas Neue", cursive;
 }
@@ -115,7 +114,7 @@ video {
 }
 .aboutMe .Abtext .myInfo .infoM {
   width: 150px;
-  height: 150px;
+
   margin: 0px 50px;
   display: flex;
   flex-direction: column;
@@ -133,9 +132,6 @@ video {
   text-align: center;
 }
 .aboutMe .Abtimg {
-  width: 40%;
-  min-width: 400px;
-  height: 100%;
   display: flex;
   align-items: flex-end;
   margin: 20px 20px 0px;
@@ -144,67 +140,51 @@ video {
   width: 100%;
 }
 .featuredRCP {
-  padding: 30px 0px;
+  width: 100%;
+  height: 70vh;
   background-color: rgb(36, 32, 36);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
 }
-.featuredRCP .left {
-  background-color: palegoldenrod;
+.FRCPsplide {
+  width: 45%;
+  height: 90%;
+  background-color: burlywood;
   margin: 20px;
   border-radius: 20px;
   overflow: hidden;
-  height: 100%;
-}
-
-.splide__arrow {
-  width: 50px !important;
-  height: 50px !important;
-
-  background-color: rgb(255, 218, 176) !important;
-}
-.FeaturedRCP-Cont {
-  background-color: rgb(116, 104, 102);
-  height: 100%;
   display: flex;
 }
-.Featured-Cont-Img-Wrapper {
-  padding: 20px;
+.FRCPsplideSlide {
+  width: 100%;
+  overflow: hidden;
 }
-.Featured-Cont-Img-Wrapper img {
+.FRCPsplideSlide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px;
-  border: 5px solid rgb(219, 219, 219);
 }
-.Featured-Cont-info {
+.FRCPIWrapper {
+  width: 40%;
+  height: 100%;
+  background-color: cadetblue;
+}
+.FRCPsplide.FRCPsplideSlide {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.Featured-Cont-info h1 {
-  font-size: 2.1rem;
-}
-.Featured-Cont-info p {
-  width: 300px;
-  font-size: 1.2rem;
-  margin: 20px;
+  height: 100%;
 }
 .featuredRCP .right {
-  padding: 20px 0px;
-  margin-left: 20px;
+  width: 50%;
+  height: 100%;
+  padding: 20px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 .featuredRCP .right h1 {
   font-size: 3rem;
-  margin-top: 80px;
+
   color: burlywood;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   font-family: "Bebas Neue", cursive;
@@ -213,7 +193,7 @@ video {
   margin-top: 40px;
   font-size: 1.25rem;
   word-wrap: break-word;
-  width: 700px;
+  max-width: 800px;
   color: rgb(252, 252, 240);
 }
 .featuredRCP .right button {
@@ -268,4 +248,63 @@ video {
   width: 100%;
   height: 20vh;
   background-color: rgb(39, 38, 38);
+}
+@media only screen and (max-width: 1024px) {
+  .content h1 {
+    /* font-size: 6rem; */
+  }
+  .lines ul li {
+    font-size: 1.2rem;
+  }
+  .content p {
+    /* font-size: 1.5rem; */
+  }
+  .lines ul li {
+    padding: 10% 0%;
+  }
+  .featuredRCP {
+    /* flex-wrap: wrap; */
+  }
+  .featuredRCP .right p {
+    /* font-size: 1rem; */
+    /* width: 200px; */
+  }
+  .featuredRCP .right h1 {
+    /* font-size: 2rem; */
+  }
+  .aboutMe .Abtext p {
+    /* font-size: 1rem; */
+  }
+  .aboutMe .Abtext .myInfo {
+    height: 100px;
+  }
+  .aboutMe .Abtext .myInfo .infoM span {
+    /* font-size: 2rem; */
+  }
+  .aboutMe .Abtext .myInfo .infoM p {
+    /* font-size: 0.8rem; */
+  }
+  .aboutMe .Abtext h1 {
+    /* font-size: 3rem; */
+  }
+  .ourGoal .div p {
+    width: 200px;
+    margin-top: 10px;
+  }
+  .ourGoal .div p:last-child {
+    opacity: 0.5;
+  }
+  .ourGoal {
+    padding: 8rem 5rem;
+  }
+  .featuredRCP {
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .links {
+    width: 60px;
+  }
+  .links a {
+  }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import FastfoodRoundedIcon from "@material-ui/icons/FastfoodRounded";
+import "../App.css";
 
 const Footer = () => {
   return (
