@@ -14,27 +14,27 @@ const HeroImg = () => {
           <ul>
             <li>
               <a href="#">
-                <InstagramIcon />
+                <InstagramIcon className="linkIcon" />
               </a>
             </li>
             <li>
               <a href="#">
-                <FacebookIcon />
+                <FacebookIcon className="linkIcon" />
               </a>
             </li>
             <li>
               <a href="#">
-                <PinterestIcon />
+                <PinterestIcon className="linkIcon" />
               </a>
             </li>
             <li>
               <a href="#">
-                <TwitterIcon />
+                <TwitterIcon className="linkIcon" />
               </a>
             </li>
             <li>
               <a href="#">
-                <RedditIcon />
+                <RedditIcon className="linkIcon" />
               </a>
             </li>
           </ul>

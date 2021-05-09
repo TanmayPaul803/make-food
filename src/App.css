@@ -1123,6 +1123,7 @@ form span {
   .footer-content {
     width: 96%;
     padding: 5px;
+    margin: 20px;
   }
   .footer-content .top .div1 {
     padding: 0;
@@ -1131,5 +1132,43 @@ form span {
 @media only screen and (max-width: 768px) {
   html {
     font-size: 60%;
+  }
+  .CatGallayCardDiv {
+    width: 220px;
+    height: 180px;
+  }
+  .imgContainer {
+    width: 220px;
+    height: 180px;
+  }
+  .CatGallayCardDiv {
+    margin: 20px 10px;
+  }
+  .footer {
+    height: fit-content;
+  }
+  .footer-content .top {
+    flex-wrap: wrap;
+  }
+  .newsLetterContainer {
+    position: relative;
+  }
+  .footer-content .top .div1 {
+    width: 100%;
+    padding: 10px;
+  }
+  .footer-content .top .div1 .FtrContainer {
+    width: 60%;
+    height: fit-content;
+    padding: 20px;
+  }
+  .footer-content .top .div3 .ftrContactCont div {
+    width: 280px;
+  }
+  .SocialLinks .link .linkitem {
+    width: 118px;
+  }
+  .SocialLinks .link {
+    width: 117px;
   }
 }

@@ -147,7 +147,7 @@ video {
   align-items: center;
 }
 .FRCPsplide {
-  width: 45%;
+  width: 50%;
   height: 90%;
   background-color: burlywood;
   margin: 20px;
@@ -216,7 +216,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+
   padding: 8rem;
 }
 .ourGoal .div {
@@ -304,7 +304,55 @@ video {
 @media only screen and (max-width: 768px) {
   .links {
     width: 60px;
+    font-size: 80px;
   }
-  .links a {
+  .linkIcon {
+    font-size: 50px;
+  }
+  .lines {
+    width: 10%;
+  }
+  .container {
+    justify-content: space-between;
+  }
+  .container {
+    height: calc(50vh - 80px);
+  }
+  .heroButton {
+    width: 50px;
+    height: 50px;
+  }
+  .featuredRCP {
+    height: 35vh;
+  }
+  .featuredRCP .right button {
+    width: 110px;
+    height: 40px;
+    margin-top: 50px;
+  }
+  .aboutMe .Abtext .myInfo .infoM {
+    margin: 0px 0px;
+  }
+  .aboutMe .Abtext h1 {
+    text-align: center;
+    padding: 0;
+  }
+  .aboutMe .Abtext .myInfo {
+    height: fit-content;
+  }
+  .aboutMe .Abtext p {
+    padding: 0;
+    text-align: justify;
+  }
+  .aboutMe .Abtext .myInfo .infoM {
+    width: 100%;
+    margin-right: 10px;
+  }
+  .aboutMe .Abtext {
+    margin: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
   }
 }
