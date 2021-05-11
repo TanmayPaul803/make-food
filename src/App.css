@@ -1172,3 +1172,37 @@ form span {
     width: 117px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .CatGallayCardDiv {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+  }
+  .imgContainer {
+    width: 200px;
+    height: 150px;
+  }
+  .catGallary {
+    justify-content: center;
+  }
+  .SocialLinks .link {
+    width: 68px;
+  
+}}
+@media only screen and (max-width: 360px) {
+  html {
+    font-size: 35%;
+  }
+  .content p {
+    padding: 20px 0px 20px;
+  }
+  .links {
+    display: none;
+  }
+  .lines {
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+}

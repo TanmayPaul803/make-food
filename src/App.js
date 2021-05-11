@@ -7,6 +7,8 @@ import Recipes from "./Components/Recipes";
 import ContactUs from "./Components/ContactUs";
 import Footer from "./Components/Footer";
 
+import SideNav from "./Components/SideNav";
+
 // import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
@@ -20,6 +22,7 @@ const App = () => {
         <Route path="/aboutRecipe" component={AboutRecipe} />
         <Route path="/Recipes" component={Recipes} />
         <Route path="/contactUs" component={ContactUs} />
+        <Route path="/sidenav" component={SideNav} />
       </Switch>
     </div>
   );

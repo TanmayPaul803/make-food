@@ -108,3 +108,19 @@
     padding-top: 0px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .recipeCard .card {
+    width: 200px;
+  }
+  .featuredRCP {
+    height: fit-content;
+    flex-wrap: wrap-reverse;
+  }
+  .FRCPsplide {
+    width: 100%;
+    height: 320px;
+  }
+  .featuredRCP .right {
+    width: 100%;
+  }
+}
