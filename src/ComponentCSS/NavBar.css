@@ -7,17 +7,24 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  background-color:#1b1919;
   
 }.navItems{
   display: flex;
   list-style: none;
   transition: .5s;
-}.navItems li{
+}.navBar_logo{
+  color: #fff;
+}
+
+.navItems li{
   margin: 0px 60px;
 }
 
 .link{
-  color: #000;
+  color: rgb(255, 255, 255);
+}.link:hover{
+  color:#a7d129 ;
 }
 .togglemenu{
   color: #000;

@@ -44,33 +44,33 @@ const Recipes = () => {
     }
   };
   console.log(drinks);
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const dessertsRes = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
-  //     );
-  //     setDesserts(dessertsRes.data.results);
-  //     const snackRes = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
-  //     );
-  //     setsnack(snackRes.data.results);
+  useEffect(() => {
+    const getData = async () => {
+      const dessertsRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=dessert`
+      );
+      setDesserts(dessertsRes.data.results);
+      const snackRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=snack`
+      );
+      setsnack(snackRes.data.results);
 
-  //     const breakfastRes = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
-  //     );
-  //     setBreakfast(breakfastRes.data.results);
-  //     const mainCourseRes = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
-  //     );
-  //     setMainCourse(mainCourseRes.data.results);
-  //     const drinksRes = await axios.get(
-  //       `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
-  //     );
-  //     setDrinks(drinksRes.data.results);
-  //   };
+      const breakfastRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=breakfast`
+      );
+      setBreakfast(breakfastRes.data.results);
+      const mainCourseRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=main course`
+      );
+      setMainCourse(mainCourseRes.data.results);
+      const drinksRes = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?number=6&apiKey=49510ae643c54e1dbe96171df5c05662&type=drink`
+      );
+      setDrinks(drinksRes.data.results);
+    };
 
-  //   getData();
-  // }, []);
+    getData();
+  }, []);
   return (
     <div className="recipes">
       <div className="hero">

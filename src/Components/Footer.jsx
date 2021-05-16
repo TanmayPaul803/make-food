@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import FastfoodRoundedIcon from "@material-ui/icons/FastfoodRounded";
 import "../App.css";
 
+//svg///
+import personalInfo_svg from"../Assets/Svgs/undraw_message_sent_1030 .svg"
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -143,6 +146,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      <div className="footerSvg"><img src={personalInfo_svg} alt="" /></div>
+      <div className="footerSvg2"><img src={personalInfo_svg} alt="" /></div>
     </div>
   );
 };

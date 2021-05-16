@@ -8,7 +8,7 @@ const NavBar = () => {
   const[sideNavState,setSideNavState]=useState(false)
   return (
     <div className="navBar">
-      <p>Logo</p>
+      <p className="navBar_logo"><FastfoodRoundedIcon/></p>
       <ul className={sideNavState? "navItems toggle_nav" : "navItems"}>
        <li><NavLink to="/foodWebsite" className="link" onClick={()=>{
 setSideNavState(!sideNavState);

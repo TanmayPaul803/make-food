@@ -17,8 +17,24 @@ import RecipeBook from "../Assets/4329557-cooking/svg/016-recipe book.svg";
 import Footer from "./Footer";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
+
+///lottie animation///
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+
+
+///svgs///
+import ourGoalsvg from "../Assets/Svgs/undraw_Done_checking_re_6vyx.svg"
+import contact_CardSvg from "../Assets/Svgs/undraw_active_support_6rwo.svg"
+import varietyOfDish_CardSvg from "../Assets/Svgs/undraw_barbecue_3x93.svg"
+import newRecipe_CardSvg from "../Assets/Svgs/undraw_diet_ghvw.svg"
+
+
+
+
+
 function Home() {
-  /// MUI Button///
+ 
   const useStyles = makeStyles((theme) => ({
     root: {
       "& > *": {
@@ -94,18 +110,36 @@ function Home() {
           </div>
         </div>
         <div className="Abtimg">
-          <img
-            src="https://www.dlf.pt/dfpng/maxpng/14-146749_chef-png.png"
-            alt=""
-          />
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <Player
+            autoplay
+            loop
+            src="https://assets10.lottiefiles.com/packages/lf20_nplwsz31.json" 
+
+            className="aboutmeAnimation"
+          >
+            <Controls
+              visible={false}
+              buttons={["play", "repeat", "frame", "debug"]}
+            />
+          </Player>
         </div>
       </div>
 
       <div className="ourGoal">
-        {/* // variety of dishes // new recipe regularly // quick support // */}
-        <div className="div left">
+
+
+
+
+        <div className="OG_Left"> <div className="ourGoal_svg"><img src={ourGoalsvg} alt="" srcset="" /></div></div>
+        
+        
+        <div className="OG_Right">
+          
+          <div className="OurGoalCardCont">
+          <div className="div left">
           <div className="ICON-Cont">
-            <img src={RecipeBook} alt="" />
+            <img src={newRecipe_CardSvg} alt="" />
           </div>
 
           <p>Varity of dishes</p>
@@ -117,7 +151,7 @@ function Home() {
         </div>
         <div className="div middle">
           <div className="ICON-Cont">
-            <img src={RecipeBook} alt="" />
+            <img src={varietyOfDish_CardSvg} alt="" />
           </div>
           <p>Varity of dishes</p>
           <span></span>
@@ -128,7 +162,7 @@ function Home() {
         </div>
         <div className=" div right">
           <div className="ICON-Cont">
-            <img src={RecipeBook} alt="" />
+            <img src={contact_CardSvg} alt="" />
           </div>
           <p>Varity of dishes</p>
           <span></span>
@@ -136,7 +170,10 @@ function Home() {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Consectetur,
           </p>
-        </div>
+        </div></div></div>
+        {/* // variety of dishes // new recipe regularly // quick support // */}
+        {/* 
+        */}
       </div>
       <Footer />
     </div>
