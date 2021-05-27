@@ -14,16 +14,18 @@ import SideNav from "./Components/SideNav";
 const App = () => {
   return (
     <div className="App">
-      <NavBar></NavBar>
+      <div className="AppContainer">
+        <NavBar></NavBar>
 
-      <Switch>
-        <Route path="/foodWebsite" component={Home} />
-        <Route path="/name" component={AboutCatagory} />
-        <Route path="/aboutRecipe" component={AboutRecipe} />
-        <Route path="/Recipes" component={Recipes} />
-        <Route path="/contactUs" component={ContactUs} />
-        <Route path="/sidenav" component={SideNav} />
-      </Switch>
+        <Switch>
+          <Route path="/foodWebsite" component={Home} />
+          <Route path="/name" component={AboutCatagory} />
+          <Route path="/aboutRecipe" component={AboutRecipe} />
+          <Route path="/Recipes" component={Recipes} />
+          <Route path="/contactUs" component={ContactUs} />
+          <Route path="/sidenav" component={SideNav} />
+        </Switch>
+      </div>
     </div>
   );
 };

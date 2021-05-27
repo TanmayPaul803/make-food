@@ -4,7 +4,7 @@ import FastfoodRoundedIcon from "@material-ui/icons/FastfoodRounded";
 import "../App.css";
 
 //svg///
-import personalInfo_svg from"../Assets/Svgs/undraw_message_sent_1030 .svg"
+import personalInfo_svg from "../Assets/Svgs/undraw_message_sent_1030 .svg";
 
 const Footer = () => {
   return (
@@ -12,37 +12,39 @@ const Footer = () => {
       <div className="SocialLinks">
         <div className="link">
           <div className="linkitem">
-            <i class="fab fa-facebook-f fa-2x"></i>Facebook
+            <i class="fab fa-facebook-f fa-2x"></i>
+
+            <span>Facebook</span>
           </div>
         </div>
         <div className="link">
           <div className="linkitem">
             <i class="fab fa-twitter fa-2x"></i>
-            Twitter
+            <span>Twitter</span>
           </div>
         </div>
         <div className="link">
           <div className="linkitem">
             <i class="fab fa-linkedin-in fa-2x"></i>
-            Linkdin
+            <span>Linkdin</span>
           </div>
         </div>
         <div className="link">
           <div className="linkitem">
             <i class="fab fa-instagram fa-2x"></i>
-            Instagram
+            <span>Instagram</span>
           </div>
         </div>
         <div className="link">
           <div className="linkitem">
             <i class="fab fa-youtube fa-2x"></i>
-            Youtube
+            <span>Youtube</span>
           </div>
         </div>
         <div className="link">
           <div className="linkitem">
             <i class="fab fa-pinterest-p fa-2x"></i>
-            Pinterest
+            <span>Pinterest</span>
           </div>
         </div>
       </div>
@@ -147,8 +149,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footerSvg"><img src={personalInfo_svg} alt="" /></div>
-      <div className="footerSvg2"><img src={personalInfo_svg} alt="" /></div>
+      <div className="footerSvg">
+        <img src={personalInfo_svg} alt="" />
+      </div>
+      <div className="footerSvg2">
+        <img src={personalInfo_svg} alt="" />
+      </div>
     </div>
   );
 };

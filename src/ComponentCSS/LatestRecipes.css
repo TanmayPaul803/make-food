@@ -5,7 +5,6 @@
   display: flex;
   flex-wrap: wrap;
   padding: 50px;
-  height: 100vh;
 }
 .recipeMainDiv h1 {
   width: 100%;
@@ -14,6 +13,8 @@
   font-size: 3rem;
   opacity: 0.7;
   padding: 10px 0px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 .recipesViewAll {
   width: 100%;
@@ -33,7 +34,7 @@
   flex: 1;
 }
 .recipeCard {
-  margin: 20px 20px;
+  margin: 9px;
   padding: 0;
   transition: 0.3s;
 }
@@ -45,7 +46,10 @@
 .recipeCard .card {
   width: 280px;
   height: fit-content;
-  background-color: rgb(59, 59, 59);
+  background-color: #1b1919;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px;
 }
 .recipeCard .card .top {
   width: 100%;
@@ -59,6 +63,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 .recipeCard .card .info {
   height: 40%;
@@ -70,9 +75,10 @@
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 20px 10px 20px 20px;
-  font-size: 1.2rem;
-  background-color: rgb(252, 211, 185);
+  padding: 20px 10px 20px 15px;
+  font-size: 1.25rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 .recipeCard .card .info .about {
@@ -83,7 +89,7 @@
 }
 .recipeCard .card .info .about p {
   border-bottom: 1px dotted grey;
-  color: beige;
+  color: rgb(235, 235, 235);
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
@@ -126,5 +132,14 @@
   }
   .featuredRCP .right {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .recipeCard .card .info .about p {
+    font-size: 11px;
+  }
+  .recipeCard .card {
+    width: 232px;
+    margin-bottom: 30px;
   }
 }

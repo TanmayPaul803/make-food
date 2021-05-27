@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import backImg from "../foodwall.jpg";
+import backImg from "../Assets/—Pngtree—food overlooking the background banner_1055258.jpg";
 import { Select, MenuItem } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
@@ -93,7 +93,7 @@ const Recipes = () => {
             getdata();
           }}
         >
-          <div>
+          <div className="form_item">
             <p className="searchP">Name of the Recipe</p>
             <TextField
               id="filled-basic"
@@ -111,7 +111,7 @@ const Recipes = () => {
             />
           </div>
 
-          <div>
+          <div className="form_item">
             <p className="searchP">Cuisine</p>
             <Select
               value={cuisine}
@@ -129,7 +129,7 @@ const Recipes = () => {
               <MenuItem value="Spanish">Spanish</MenuItem>
             </Select>
           </div>
-          <div>
+          <div className="form_item">
             <p className="searchP">Diet</p>
             <Select
               value={diet}
@@ -146,7 +146,7 @@ const Recipes = () => {
               <MenuItem value="omnivore">omnivore</MenuItem>
             </Select>
           </div>
-          <div>
+          <div className="form_item">
             <p className="searchP">Include Ingredients</p>
             <TextField
               id="filled-basic"
@@ -163,7 +163,7 @@ const Recipes = () => {
               // }}
             />
           </div>
-          <div>
+          <div className="form_item">
             <p className="searchP">Type</p>
             <Select
               value={type}
@@ -182,7 +182,7 @@ const Recipes = () => {
               <MenuItem value="salad">salad</MenuItem>
             </Select>
           </div>
-          <div>
+          <div className="form_item">
             <p className="searchP">Intolerances</p>
             <Select
               value={intolerance}
@@ -206,6 +206,7 @@ const Recipes = () => {
             onClick={() => {
               setFormSubmitTriggred(true);
             }}
+            className="form_item submit"
           />
         </form>
       </div>

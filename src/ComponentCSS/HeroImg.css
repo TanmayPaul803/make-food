@@ -12,35 +12,35 @@ video {
   width: 100%;
   position: relative;
   height: 94vh;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"); */
-background-color: #1b1919;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.705)),
+    url("../Assets/—Pngtree—food\ food\ snack\ eating\ goods_925656.jpg");
+  background-color: #1b1919;
   background-size: cover;
   display: flex;
-}.container .Chef_IMG{
-
-position: absolute;
-bottom: 0;
-left: 0;
-
-
-}.container .Chef_IMG img{
-width: 100%;
-height: 100%;
+}
+.container .Chef_IMG {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.container .Chef_IMG img {
+  width: 100%;
+  height: 100%;
 }
 
-.container .Bottom_IMG{
-position: absolute;
-bottom: 0;
-right: 0;
-opacity: .5;
-width: 400px;
-height: 400px;
-
-}.container .Bottom_IMG img{
-width: 100%;
-height: 100%;
-
+.container .Bottom_IMG {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  width: 400px;
+  height: 400px;
+  display: none;
+}
+.container .Bottom_IMG img {
+  width: 100%;
+  height: 100%;
 }
 .links {
   width: 200px;
@@ -49,7 +49,8 @@ height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}.links ul li a{
+}
+.links ul li a {
   color: beige;
   margin: 20px 0px;
 }
@@ -68,7 +69,7 @@ height: 100%;
 .content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 50px 0px;
   flex-direction: column;
   z-index: 1;
@@ -93,7 +94,6 @@ height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 .lines ul li {
   font-size: 1.5rem;
@@ -123,20 +123,21 @@ height: 100%;
   position: relative;
   background-color: rgb(236, 236, 236);
   display: flex;
-  height: 100vh;
+  padding: 150px 0px;
 }
 .aboutMe .Abtext {
   width: 47%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}.aboutmeAnimation{
+}
+.aboutmeAnimation {
   width: 600px;
   height: 600px;
 }
 .aboutMe .Abtext h1 {
   padding-left: 50px;
-  padding-top: 100px;
+
   font-size: 4rem;
   font-family: "Bebas Neue", cursive;
 }
@@ -174,7 +175,7 @@ height: 100%;
 .aboutMe .Abtimg {
   display: flex;
   align-items: center;
-  
+
   width: 50%;
   justify-content: center;
 }
@@ -183,22 +184,20 @@ height: 100%;
 }
 .featuredRCP {
   width: 100%;
-  height: 100vh;
+  padding: 100px 0px;
   background-color: rgb(36, 32, 36);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  
 }
 .FRCPsplide {
- width: 500px;
- height: 500px;
+  width: 500px;
+  height: 500px;
   background-color: burlywood;
 
   border-radius: 20px;
   overflow: hidden;
- margin: 50px;
- 
+  margin: 50px;
 }
 .FRCPsplideSlide {
   width: 100%;
@@ -220,13 +219,13 @@ height: 100%;
 }
 .featuredRCP .right {
   flex: 1;
- 
+
   display: flex;
   justify-content: center;
   flex-direction: column;
-}.featuredRCP .right div{
+}
+.featuredRCP .right div {
   margin: 20px;
- 
 }
 .featuredRCP .right h1 {
   font-size: 3rem;
@@ -261,12 +260,10 @@ height: 100%;
   background-color: #1b1919;
   display: flex;
   align-items: center;
- 
-height: 100vh;
 
-  
-  
- position: relative;
+  height: 70vh;
+
+  position: relative;
 }
 .ourGoal .div {
   display: flex;
@@ -276,12 +273,13 @@ height: 100vh;
   margin: 10px;
   border-radius: 10px;
   background-color: rgb(241, 241, 241);
+  box-shadow: 0px 5px 5px white;
   color: #1b1919;
   width: 28%;
+  height: 100%;
   padding: 20px;
-  min-width: 200px;
-max-width: 280px;
-  
+
+  max-width: 280px;
 }
 .ourGoal .div span {
   margin: 15px;
@@ -291,12 +289,11 @@ max-width: 280px;
 }
 
 .ourGoal .div p {
- margin-top: 20px;
+  margin-top: 20px;
   text-align: center;
 }
 .ourGoal .div .ICON-Cont {
-  width: 150px;
-  height: 150px;
+  width: 100%;
 }
 .ourGoal .div .ICON-Cont img {
   width: 100%;
@@ -307,26 +304,27 @@ max-width: 280px;
   height: 20vh;
   background-color: rgb(39, 38, 38);
 }
-.ourGoal_svg{
-  
+.ourGoal_svg {
   width: 500px;
- 
-}.ourGoal_svg img{
+}
+.ourGoal_svg img {
   width: 100%;
   height: 100%;
-}.OG_Left{
-  
+}
+.OG_Left {
   height: 100%;
   display: flex;
 
- align-items: flex-end;
-}.OG_Right{
+  align-items: flex-end;
+}
+.OG_Right {
   display: flex;
   align-items: center;
 
- flex: 1;
+  flex: 1;
   height: 100%;
-}.OurGoalCardCont{
+}
+.OurGoalCardCont {
   width: 100%;
   display: flex;
   align-items: center;
@@ -334,27 +332,25 @@ max-width: 280px;
   flex-wrap: wrap;
 }
 @media only screen and (max-width: 1024px) {
-
-
-  .container .Chef_IMG{
-
-
+  .container {
+    height: 50vh;
+  }
+  .container .Chef_IMG {
     width: 600px;
-    
-   
-  }.container .Bottom_IMG{
+  }
+  .container .Bottom_IMG {
     width: 200px;
     height: 200px;
     bottom: 0;
   }
   .content h1 {
-    /* font-size: 6rem; */
+    font-size: 6rem;
   }
   .lines ul li {
     font-size: 1.2rem;
   }
   .content p {
-    /* font-size: 1.5rem; */
+    font-size: 1.5rem;
   }
   .lines ul li {
     padding: 10% 0%;
@@ -383,7 +379,8 @@ max-width: 280px;
   }
   .aboutMe .Abtext h1 {
     /* font-size: 3rem; */
-  }.aboutmeAnimation{
+  }
+  .aboutmeAnimation {
     width: 450px;
     height: 450px;
   }
@@ -395,13 +392,13 @@ max-width: 280px;
     opacity: 0.5;
   }
   .ourGoal {
-  
-  }.OurGoalCardCont{
+  }
+  .OurGoalCardCont {
     justify-content: center;
   }
   .featuredRCP {
-    
-  }.ourGoal .div{
+  }
+  .ourGoal .div {
     margin: 0px;
     margin-left: 15px;
     margin-bottom: 15px;
@@ -410,11 +407,15 @@ max-width: 280px;
 @media only screen and (max-width: 768px) {
   .links {
     width: 60px;
-   color: azure;
-
-  }.links ul li a{
+    color: azure;
+  }
+  .links ul li {
+    margin: 50px 0px;
+  }
+  .links ul li a {
     color: beige;
-  }.lines ul li{
+  }
+  .lines ul li {
     color: beige;
   }
   .linkIcon {
@@ -427,7 +428,6 @@ max-width: 280px;
     justify-content: space-between;
   }
   .container {
-    
   }
   .heroButton {
     width: 50px;
@@ -458,7 +458,7 @@ max-width: 280px;
     width: 80%;
   }
   .aboutMe .Abtext .myInfo .infoM {
-    width: 100%;
+    align-items: center;
     margin: 0px 10px;
   }
   .aboutMe .Abtext {
@@ -468,16 +468,22 @@ max-width: 280px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }.aboutMe{
-   flex-direction:column;
-   align-items: center;
-   justify-content: center;
-  }.ourGoal{
+  }
+  .aboutMe {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .ourGoal {
     flex-direction: column-reverse;
-
-  }.OG_Left{
     height: auto;
-  }.FRCPsplide{
+    padding-top: 50px;
+  }
+  .OG_Left {
+    height: auto;
+  }
+  .FRCPsplide {
     width: 350px;
     height: 350px;
   }
@@ -493,34 +499,60 @@ max-width: 280px;
     width: 100%;
   }
   .ourGoal .div p {
-    width: 145px;
+    width: 135px;
   }
   .aboutMe {
     flex-wrap: wrap;
+    padding: 0;
   }
   .aboutMe .Abtext {
     width: 100%;
-    margin: 50px 20px 0px;
+
     align-items: center;
-  }.aboutMe .Abtext .myInfo{
+  }
+  .aboutMe .Abtext .myInfo {
     width: 100%;
     height: 100px;
-  }.aboutMe .Abtext h1{
+  }
+  .aboutMe .Abtext h1 {
     margin-bottom: 20px;
-  }.aboutMe .Abtext p{
+  }
+  .aboutMe .Abtext p {
     margin-bottom: 20px;
-  }.aboutMe .Abtext .myInfo .infoM{
+  }
+  .aboutMe .Abtext .myInfo .infoM {
     margin-right: 0px;
-  }.ourGoal .div{
-    margin:0px;
+  }
+  .ourGoal .div {
+    margin: 0px;
+  }
+  .ourGoal_svg {
+    width: 100%;
+  }
+  .ourGoal .div {
+    margin: 5px;
+    width: 30%;
+  }
+  .FRCPsplide {
+    margin: 20px;
   }
 }
-/* @media only screen and (max-width: 360px) {
-  html {
-    font-size: 40%;
+@media only screen and (max-width: 360px) {
+  .aboutMe .Abtimg {
+    width: 100%;
   }
-  .heroButton {
-    width: 30px;
-    height: 30px;
+  .aboutmeAnimation {
+    width: 100%;
   }
-} */
+  .ourGoal .div {
+    margin: 10px;
+    width: 60%;
+  }
+  .ourGoal .div p {
+    width: 100%;
+    font-size: 12px;
+  }
+  .FRCPsplide {
+    margin: 10px;
+  }
+}
