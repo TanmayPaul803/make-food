@@ -1399,7 +1399,7 @@ form span {
   }
   .similer-recipe-container {
     height: auto;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
   .divTitle-SRcp h1 {
     font-size: 2.5rem;
@@ -1415,6 +1415,9 @@ form span {
     min-width: none;
   }
   /* Recipe details  Page */
+  .recipeContent {
+    padding: 0;
+  }
   .Recipe-Info-Tittle {
     position: relative;
     top: auto;
