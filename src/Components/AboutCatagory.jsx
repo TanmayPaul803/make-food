@@ -37,8 +37,10 @@ function AboutCatagory(props) {
               <h3>fresh food</h3>
               <h1>{CatagoryName}</h1>
             </div>
-            <p>{para}</p>
-            <button className="LFT-Btn">Explore</button>
+            <span>
+              <p>{para}</p>
+              <button className="LFT-Btn">Explore</button>
+            </span>
           </div>
         </div>
         <div className="right">
@@ -75,6 +77,7 @@ function AboutCatagory(props) {
           <h1>Available Dishes</h1>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

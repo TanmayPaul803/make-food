@@ -160,6 +160,7 @@ function AboutRecipe(props) {
                       readyIn={val.readyInMinutes}
                       servings={val.servings}
                       key={val.id}
+                      className="smlr_rcp_crd"
                     />
                   </NavLink>
                 </>

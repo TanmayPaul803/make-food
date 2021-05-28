@@ -71,13 +71,11 @@
 .keywordComponent ul li:hover {
   color: rgb(5, 190, 89);
 }
-.aboutCatagory {
-}
-.aboutCatagory .top {
+
+.aboutCatagory > .top {
   width: 100%;
   height: calc(100vh - 80px);
   display: flex;
-  flex-wrap: wrap;
   background-color: #f9f4f1;
 }
 .top .left {
@@ -104,6 +102,7 @@
 .top .left p {
   margin-top: 30px;
   padding: 20px;
+  word-break: break-all;
 }
 .top .right {
   width: 50%;
@@ -167,36 +166,29 @@
 }
 .aboutCatagoryInfobottom {
   width: 100%;
-  height: 70vh;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+
   background-color: rgba(44, 44, 44, 0.884);
   padding: 20px;
 }
 
 .ACIB-Img-wrapper {
   width: 480px;
-  min-width: 480px;
-  height: 100%;
-  background-color: rgb(43, 43, 43);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 60px solid rgb(43, 43, 43);
 }
 .ACIB-Img-wrapper img {
-  width: 70%;
-  min-width: 70%;
+  width: 100%;
+  min-width: 100%;
 }
 .availableDishes {
-  width: 50%;
-  height: 100%;
+  display: flex;
+  flex: 1;
   background-color: #5c5c5c;
-  min-width: 480px;
 }
 .availableDishes-Name {
   width: 150px;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,6 +211,7 @@
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
+  max-width: 900px;
 }
 .availableDishes ol li {
   font-size: 1.6rem;
@@ -226,6 +219,8 @@
   padding: 20px;
   font-family: "Amatic SC", cursive;
   font-weight: normal;
+  font-size: 2rem;
+  color: #fff;
 }
 
 .availableDishes ol li :hover {
@@ -582,7 +577,7 @@
   margin: 4px;
   width: 100px;
   border-radius: 2px;
-
+  height: 45px !important;
   color: white;
   background-color: #dd104e !important;
 }
@@ -633,8 +628,7 @@
 .footer-content .bottom .FtrBtmCont div:first-child span {
   color: #cf974d;
 }
-.footer-content .bottom .FtrBtmCont div:last-child {
-}
+
 .footer-content .bottom .FtrBtmCont div:last-child ul {
   list-style: none;
   display: inline-block;
@@ -1140,9 +1134,7 @@ form span {
   html {
     font-size: 90%;
   }
-  .recipeContent {
-    margin-top: 55em;
-  }
+
   .footer-content .top .div1 .FtrContainer {
     width: 300px;
     height: 300px;
@@ -1184,6 +1176,48 @@ form span {
   }
   .form_item {
     margin: 10px 0px;
+  }
+  /* contact page */
+  .contactForm {
+    flex: 1;
+  }
+  .contactText {
+    width: 38%;
+  }
+  .contactText .Continfo {
+    padding: 0;
+    padding: 0px 50px 0px 20px;
+  }
+
+  /* About Catagory Page */
+  .aboutCatagoryInfobottom {
+    flex-wrap: wrap-reverse;
+  }
+  .availableDishes-Name {
+    width: 100%;
+    justify-content: flex-end;
+    padding: 50px 0px;
+  }
+  .availableDishes-Name h1 {
+    writing-mode: horizontal-tb;
+    margin-right: 50px;
+  }
+  .ACIB-Img-wrapper {
+    width: 100%;
+    border: 100px solid rgb(43, 43, 43);
+  }
+  .availableDishes {
+    padding: 50px 0px;
+  }
+
+  /* Footer */
+  .SocialLinks {
+    padding: 20px;
+  }
+  /* Recipe Details Page */
+  .recipeContent {
+    width: auto;
+    margin-top: 50em;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1228,6 +1262,50 @@ form span {
   .SocialLinks .link {
     width: 117px;
   }
+  /* Contact Page  */
+  .contactText {
+    width: 100%;
+  }
+  .contactText .Continfo {
+    margin-top: 50px;
+    padding: 0% 10%;
+  }
+  .contactForm {
+    width: 100%;
+  }
+  /* About Catagory Page */
+  .aboutCatagory > .top {
+    height: 60vh;
+    padding: 0px 5px;
+  }
+  .aboutCatagory > .top > .left {
+    align-items: center;
+  }
+  .catagoryThumbContainer {
+    width: 80%;
+  }
+  .aboutCatagorycontainer {
+    width: fit-content;
+  }
+  .availableDishes {
+    padding: 50px 0px;
+  }
+
+  .ACIB-Img-wrapper {
+    width: 100%;
+    border: 100px solid rgb(43, 43, 43);
+  }
+  /* Recipe Details Page */
+  .Recipe-Info-Tittle {
+    width: 100%;
+    top: 45%;
+  }
+  .recipeContent {
+    margin-top: 60em;
+  }
+  .divTitle-SRcp h1 {
+    font-size: 3rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   .CatGallayCardDiv {
@@ -1256,6 +1334,112 @@ form span {
   }
   .MuiSelect-select.MuiSelect-select {
     padding-right: 0 !important;
+  }
+  .searchP {
+    font-size: 1.4rem;
+    margin-left: 0px;
+  }
+  .SocialLinks {
+    height: 150px;
+  }
+  .linkitem span {
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  /* About Catagory Page */
+
+  .aboutCatagory > .top > .right > .catagoryThumbContainer {
+    width: 100%;
+  }
+  .aboutCatagory > .top > .left {
+    width: 50%;
+  }
+
+  .aboutCatagoryTopInfoContainer {
+    width: auto;
+  }
+  .aboutCatagoryTopInfoContainer > h1 {
+    font-size: 4rem !important;
+  }
+  .top .left h3 {
+    width: 91%;
+  }
+  .aboutCatagoryInfoTop p {
+    width: 100%;
+    text-align: justify;
+  }
+  .aboutCatagoryInfobottom {
+    padding: 5px;
+  }
+  .availableDishes {
+    width: 100%;
+  }
+  .availableDishes ol {
+    column-count: auto;
+  }
+  .ACIB-Img-wrapper {
+    border: 50px solid rgb(43, 43, 43);
+  }
+
+  /* contact page */
+  .formDiv {
+    width: 100%;
+    min-width: none;
+  }
+  .recipeContent {
+    width: 100%;
+  }
+  .extendedInfo {
+    flex-direction: column;
+  }
+  .simmiler-cat {
+    width: 100%;
+    min-width: none;
+  }
+  .similer-recipe-container {
+    height: auto;
+    flex-direction: column;
+  }
+  .divTitle-SRcp h1 {
+    font-size: 2.5rem;
+  }
+  .similler-cat-title-container .div {
+    width: 25%;
+  }
+  .extendedInfo .directions {
+    width: 100%;
+  }
+  .extendedInfo .ingredients {
+    width: 100%;
+    min-width: none;
+  }
+  /* Recipe details  Page */
+  .Recipe-Info-Tittle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+  }
+  .RCP-infoBottom {
+    flex-direction: column;
+  }
+  .RCP-infoBottom > .imgCont {
+    width: 100%;
+  }
+  .RCP-infoBottom .desc {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .recipeContent {
+    margin-top: 50px;
+  }
+  .similer-recipe-container {
+    padding: 70px 0px;
+  }
+  .similer-recipe-container .recpeCard > .card {
+    width: 260px !important;
+    margin: 20px;
   }
 }
 @media only screen and (max-width: 360px) {
@@ -1377,5 +1561,83 @@ form span {
   }
   .MuiFilledInput-input {
     padding: 17px 0px !important;
+  }
+
+  /* About Container */
+  .aboutCatagory > .top {
+    min-height: calc(100vh - 70px);
+    position: relative;
+    padding: 30px 25px;
+  }
+  .top .left h3 {
+    width: 77%;
+  }
+  .availableDishes-Name h1 {
+    font-size: 2.5rem;
+  }
+  .availableDishes ol li {
+    margin: 0px 30px;
+  }
+  .aboutCatagory > .top > .right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+  .aboutCatagory > .top > .left {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutCatagorycontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* contact Page*/
+  .formDiv {
+    min-width: auto;
+    margin: 5px;
+    padding: 30px 20px 40px;
+    outline-offset: -6px;
+  }
+  .inputSubmit {
+    margin-top: 0 !important;
+  }
+  .ContactDetails .contactForm {
+    padding: 0px 0px 50px !important;
+  }
+  .contactText {
+    margin-top: 20px;
+  }
+  .contactForm form .nameCont {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .contactForm form .nameCont div {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  /* Recipe Details */
+  .extendedInfo .ingredients {
+    min-width: auto;
+  }
+  .recipeContent {
+    padding: 0;
+  }
+  .extendedInfo .directions {
+    margin-top: 50px;
+  }
+  .divTitle-SRcp h1 {
+    font-size: 2.2rem;
+  }
+  .simmiler-cat {
+    margin-bottom: 50px;
+  }
+  .BGImg {
+    display: none;
   }
 }
