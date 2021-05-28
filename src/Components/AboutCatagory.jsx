@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../App.css";
 import { NavLink } from "react-router-dom";
-import { LocalFlorist } from "@material-ui/icons";
+
 import Footer from "./Footer";
 
 function AboutCatagory(props) {
   console.log(props);
 
-  const apikey = "c7aaf86506c046b7a7e6e5b23664593a";
   const [data, setData] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);

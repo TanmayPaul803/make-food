@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CallReceived, LocalFlorist } from "@material-ui/icons";
+
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import RecipeCard from "./RecipeCard";
 import { NavLink } from "react-router-dom";
 import bgImg from "../Assets/foodwall.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Footer from "./Footer";
 
 function AboutRecipe(props) {
@@ -21,7 +21,7 @@ function AboutRecipe(props) {
   });
 
   const foodID = props.location.state.id;
-  const FoodName = props.location.state.title;
+
   // console.log(apiData);
 
   useEffect(() => {
