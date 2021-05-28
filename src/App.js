@@ -18,7 +18,7 @@ const App = () => {
         <NavBar></NavBar>
 
         <Switch>
-          <Route path="/foodWebsite" component={Home} />
+          <Route path="/" component={Home} />
           <Route path="/name" component={AboutCatagory} />
           <Route path="/aboutRecipe" component={AboutRecipe} />
           <Route path="/Recipes" component={Recipes} />

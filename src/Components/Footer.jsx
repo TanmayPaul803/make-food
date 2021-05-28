@@ -132,7 +132,7 @@ const Footer = () => {
               </div>
               <div>
                 <ul>
-                  <NavLink to="/foodWebsite">
+                  <NavLink to="/">
                     <li>Home</li>
                   </NavLink>
                   <NavLink to="/Recipes">
